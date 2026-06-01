@@ -412,15 +412,76 @@
     }
   }
 
-  function submitForm() {
+  async function submitForm() {
     const first = document.getElementById('yourFirst').value.trim();
     const email = document.getElementById('yourEmail').value.trim();
     if (!first || !email) {
       alert('Please fill in your name and email address to continue.');
       return;
     }
-    document.getElementById('formContent').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
+
+    // Collect genre selections
+    const genres = [...document.querySelectorAll('#formContent .toggle-group:first-of-type .toggle.active')]
+      .map(el => el.textContent).join(', ');
+
+    // Collect day selections
+    const days = [...document.querySelectorAll('#formContent .toggle-group:nth-of-type(2) .toggle.active')]
+      .map(el => el.textContent).join(', ');
+
+    // Collect time selections
+    const times = [...document.querySelectorAll('#formContent .toggle-group:nth-of-type(3) .toggle.active')]
+      .map(el => el.textContent).join(', ');
+
+    const who = document.getElementById('btnFamily').classList.contains('active') ? 'Family member' : 'Senior themselves';
+    const seniorName = document.getElementById('seniorFirst') ? document.getElementById('seniorFirst').value : '';
+    const seniorAge = document.getElementById('seniorAge') ? document.getElementById('seniorAge').value : '';
+    const phone = document.getElementById('yourPhone').value;
+    const favBooks = document.getElementById('favBooks').value;
+    const notes = document.getElementById('anythingElse').value;
+    const timezone = document.getElementById('timezone').value;
+    const lastName = document.getElementById('yourLast').value;
+
+    const formData = {
+      'Booking from': who,
+      'First name': first,
+      'Last name': lastName,
+      'Email': email,
+      'Phone': phone || 'Not provided',
+      'Senior name': seniorName || 'N/A',
+      'Senior age': seniorAge || 'N/A',
+      'Genres': genres || 'None selected',
+      'Favourite books/authors': favBooks || 'Not provided',
+      'Notes': notes || 'None',
+      'Preferred days': days || 'None selected',
+      'Preferred times': times || 'None selected',
+      'Time zone': timezone || 'Not selected',
+      '_subject': 'New session booking from ' + first + ' ' + lastName
+    };
+
+    const submitBtn = document.querySelector('.submit-btn');
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch('https://formspree.io/f/mojbodyp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        document.getElementById('formContent').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      } else {
+        alert('Something went wrong. Please try again or email hello@achaptertogether.org directly.');
+        submitBtn.textContent = 'Request my free session ✦';
+        submitBtn.disabled = false;
+      }
+    } catch (err) {
+      alert('Something went wrong. Please try again or email hello@achaptertogether.org directly.');
+      submitBtn.textContent = 'Request my free session ✦';
+      submitBtn.disabled = false;
+    }
   }
 </script>
 
