@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Chapter Together — Live reading sessions for seniors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #fafaf8; color: #1a1a1a; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid #e8e6e0; background: white; position: sticky; top: 0; z-index: 10; }
+    .nav-logo { font-size: 18px; font-weight: 500; color: #085041; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 14px; color: #555; text-decoration: none; }
+    .nav-links a:hover { color: #085041; }
+    .nav-btn { background: #1D9E75; color: white; border: none; padding: 9px 20px; border-radius: 8px; font-size: 14px; cursor: pointer; font-family: inherit; }
+    .nav-btn:hover { background: #0F6E56; }
+
+    /* PAGE SWITCHING */
+    #homePage { display: block; }
+    #bookingPage { display: none; }
+
+    /* HERO */
+    .hero { background: #E1F5EE; padding: 5rem 2rem 4rem; text-align: center; }
+    .hero-tag { font-size: 13px; color: #0F6E56; background: #9FE1CB; padding: 4px 16px; border-radius: 20px; display: inline-block; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: 42px; font-weight: 500; color: #085041; line-height: 1.2; margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .hero p { font-size: 18px; color: #0F6E56; line-height: 1.7; max-width: 500px; margin: 0 auto 2.5rem; }
+    .btn-primary { background: #1D9E75; color: white; border: none; padding: 15px 36px; border-radius: 8px; font-size: 16px; font-weight: 500; cursor: pointer; font-family: inherit; margin-right: 12px; }
+    .btn-primary:hover { background: #0F6E56; }
+    .btn-secondary { background: transparent; color: #0F6E56; border: 1.5px solid #0F6E56; padding: 14px 30px; border-radius: 8px; font-size: 16px; font-weight: 500; cursor: pointer; font-family: inherit; }
+    .btn-secondary:hover { background: #E1F5EE; }
+
+    /* SECTIONS */
+    .section { padding: 4rem 2rem; max-width: 860px; margin: 0 auto; }
+    .section-label { font-size: 12px; color: #888; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .section h2 { font-size: 30px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.75rem; }
+    .section > p { font-size: 16px; color: #555; line-height: 1.7; max-width: 560px; }
+
+    /* HOW IT WORKS */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 2rem; }
+    .step-card { background: white; border: 1px solid #e8e6e0; border-radius: 12px; padding: 1.5rem; }
+    .step-num { width: 34px; height: 34px; border-radius: 50%; background: #E1F5EE; color: #0F6E56; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .step-card h3 { font-size: 15px; font-weight: 500; color: #1a1a1a; margin-bottom: 6px; }
+    .step-card p { font-size: 13px; color: #666; line-height: 1.65; }
+
+    /* MEET SECTION */
+    .meet { background: #f4f4f0; padding: 4rem 2rem; }
+    .meet-inner { max-width: 760px; margin: 0 auto; display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap; }
+    .photo-wrap { flex-shrink: 0; }
+    .photo-circle { width: 160px; height: 160px; border-radius: 50%; background: #9FE1CB; border: 4px solid #5DCAA5; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .photo-circle img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-initials { font-size: 48px; color: #085041; font-weight: 500; }
+    .meet-text h2 { font-size: 28px; font-weight: 500; color: #1a1a1a; margin-bottom: 1rem; }
+    .meet-text blockquote { font-size: 16px; color: #0F6E56; font-style: italic; line-height: 1.8; margin-bottom: 1rem; border-left: 3px solid #1D9E75; padding-left: 1rem; }
+    .meet-text p { font-size: 15px; color: #555; line-height: 1.75; }
+
+    /* WHO IT'S FOR */
+    .who-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 1.5rem; }
+    .who-card { background: white; border: 1px solid #e8e6e0; border-radius: 12px; padding: 1.5rem; }
+    .who-icon { font-size: 28px; margin-bottom: 12px; }
+    .who-card h3 { font-size: 15px; font-weight: 500; color: #1a1a1a; margin-bottom: 6px; }
+    .who-card p { font-size: 13px; color: #666; line-height: 1.65; }
+
+    /* TESTIMONIAL */
+    .testimonial-wrap { background: white; max-width: 860px; margin: 0 auto; padding: 2rem; border-left: 4px solid #1D9E75; }
+    .testimonial-wrap p { font-size: 18px; color: #1a1a1a; font-style: italic; line-height: 1.75; margin-bottom: 12px; }
+    .testimonial-author { font-size: 13px; color: #888; }
+
+    /* PRICING */
+    .pricing-band { background: #085041; padding: 4rem 2rem; text-align: center; }
+    .pricing-band h2 { font-size: 30px; font-weight: 500; color: #E1F5EE; margin-bottom: 0.75rem; }
+    .free-pill { display: inline-block; background: #9FE1CB; color: #085041; font-size: 14px; font-weight: 500; padding: 8px 22px; border-radius: 20px; margin-bottom: 1.5rem; }
+    .price-num { font-size: 56px; font-weight: 500; color: white; margin-bottom: 0.25rem; }
+    .price-sub { font-size: 15px; color: #9FE1CB; margin-bottom: 2rem; }
+    .pricing-features { list-style: none; max-width: 360px; margin: 0 auto 2.5rem; text-align: left; display: flex; flex-direction: column; gap: 10px; }
+    .pricing-features li { font-size: 15px; color: #9FE1CB; display: flex; align-items: center; gap: 10px; }
+    .pricing-features li::before { content: "✓"; color: #5DCAA5; font-weight: 500; flex-shrink: 0; }
+    .btn-white { background: white; color: #085041; border: none; padding: 15px 36px; border-radius: 8px; font-size: 16px; font-weight: 500; cursor: pointer; font-family: inherit; }
+    .btn-white:hover { background: #E1F5EE; }
+
+    /* FOOTER */
+    footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; font-size: 13px; }
+    footer a { color: #9FE1CB; text-decoration: none; }
+
+    /* BOOKING FORM */
+    .booking-wrap { max-width: 600px; margin: 0 auto; padding: 3rem 2rem; }
+    .back-link { font-size: 14px; color: #555; display: flex; align-items: center; gap: 6px; margin-bottom: 2rem; cursor: pointer; background: none; border: none; font-family: inherit; }
+    .back-link:hover { color: #085041; }
+    .booking-tag { font-size: 13px; color: #0F6E56; background: #E1F5EE; padding: 4px 14px; border-radius: 20px; display: inline-block; margin-bottom: 1rem; }
+    .booking-wrap h1 { font-size: 30px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.5rem; }
+    .booking-wrap .subtitle { font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 2rem; }
+    .free-reminder { background: #E1F5EE; border-radius: 10px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; }
+    .free-reminder .icon { font-size: 22px; }
+    .free-reminder p { font-size: 14px; color: #085041; line-height: 1.5; }
+    .who-switcher { display: flex; background: #f0f0ec; border-radius: 10px; padding: 4px; margin-bottom: 2rem; }
+    .who-btn { flex: 1; padding: 10px; text-align: center; font-size: 14px; border-radius: 7px; cursor: pointer; color: #666; border: none; background: transparent; font-family: inherit; }
+    .who-btn.active { background: white; color: #1a1a1a; font-weight: 500; border: 1px solid #e0e0d8; }
+    .form-divider { font-size: 12px; color: #aaa; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid #e8e6e0; padding-bottom: 8px; margin: 2rem 0 1.25rem; }
+    .field { margin-bottom: 1.25rem; }
+    .field label { display: block; font-size: 14px; font-weight: 500; color: #1a1a1a; margin-bottom: 6px; }
+    .field .hint { font-size: 12px; color: #888; margin-bottom: 6px; }
+    .optional { font-size: 11px; color: #aaa; font-weight: 400; margin-left: 5px; }
+    .field input, .field select, .field textarea { width: 100%; font-size: 15px; padding: 11px 13px; border: 1px solid #ddd; border-radius: 8px; background: white; color: #1a1a1a; font-family: inherit; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #1D9E75; }
+    .field textarea { min-height: 90px; resize: vertical; line-height: 1.6; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .toggle-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .toggle { padding: 8px 16px; border-radius: 20px; border: 1px solid #ddd; font-size: 13px; color: #555; cursor: pointer; background: white; font-family: inherit; transition: all 0.15s; }
+    .toggle.active { background: #E1F5EE; color: #085041; border-color: #1D9E75; font-weight: 500; }
+    .submit-btn { width: 100%; background: #1D9E75; color: white; border: none; padding: 16px; border-radius: 8px; font-size: 16px; font-weight: 500; cursor: pointer; margin-top: 1.5rem; font-family: inherit; }
+    .submit-btn:hover { background: #0F6E56; }
+    .privacy-note { font-size: 12px; color: #aaa; text-align: center; margin-top: 1rem; line-height: 1.6; }
+    .success-msg { display: none; text-align: center; padding: 4rem 1rem; }
+    .success-msg .big-icon { font-size: 52px; margin-bottom: 1rem; }
+    .success-msg h2 { font-size: 26px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.75rem; }
+    .success-msg p { font-size: 15px; color: #666; line-height: 1.7; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .nav-links a { display: none; }
+      .field-row { grid-template-columns: 1fr; }
+      .meet-inner { flex-direction: column; text-align: center; }
+      .meet-text blockquote { text-align: left; }
+      .btn-secondary { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">A Chapter Together</div>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#meet">Meet your reader</a>
+  </div>
+  <button class="nav-btn" onclick="showBooking()">Book a free session</button>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="homePage">
+
+  <div class="hero">
+    <div class="hero-tag">First session always free</div>
+    <h1>Your loved one deserves to be read to</h1>
+    <p>Live, one-on-one reading sessions over video call. Real voices. Real connection. Real joy.</p>
+    <button class="btn-primary" onclick="showBooking()">Book your free session</button>
+    <button class="btn-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</button>
+  </div>
+
+  <div class="section" id="how">
+    <div class="section-label">How it works</div>
+    <h2>Simple, warm, and personal</h2>
+    <p>Getting started takes less than two minutes. No apps to download, no complicated setup.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Book a session</h3>
+        <p>Tell us about your loved one — their name, interests, and the kinds of books they enjoy.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>First one's free</h3>
+        <p>Your first session is completely free — no credit card needed. Try it with zero risk.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Connect over video</h3>
+        <p>Sessions happen over Zoom or FaceTime. A warm face, a good book, and real conversation.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Keep the story going</h3>
+        <p>Book regular sessions at $60 each. Many families say it becomes the highlight of the week.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="meet" id="meet">
+    <div class="meet-inner">
+      <div class="photo-wrap">
+        <div class="photo-circle">
+          <!-- Replace the line below with: <img src="your-photo.jpg" alt="Your name" /> -->
+          <span class="photo-initials">👤</span>
+        </div>
+      </div>
+      <div class="meet-text">
+        <h2>Meet your reader</h2>
+        <blockquote>"I used to read to my daughters every night before bed. Those were some of the most connected moments of my life. I started A Chapter Together because every senior deserves to feel that same warmth."</blockquote>
+        <p>I'm [Your Name], the founder and reader behind A Chapter Together. Every session I bring the same care, patience, and love of stories I brought to my daughters' bedtime stories.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Who it's for</div>
+    <h2>Made for families who care deeply</h2>
+    <div class="who-cards">
+      <div class="who-card">
+        <div class="who-icon">❤️</div>
+        <h3>Adult children</h3>
+        <p>Living far away? Give your parent something truly meaningful — a real human connection, every week.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">📖</div>
+        <h3>Seniors themselves</h3>
+        <p>Miss being read to? Love stories but struggle with small print? This was made for you.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🏠</div>
+        <h3>Care facilities</h3>
+        <p>Enrich your residents' days with regular reading sessions. We'd love to partner with you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 0 2rem 3rem; max-width: 860px; margin: 0 auto;">
+    <div class="testimonial-wrap">
+      <p>"My mother hadn't lit up like that in months. Her reader remembered what chapter they'd left off on and asked how her garden was doing. It felt like a visit from a dear friend."</p>
+      <div class="testimonial-author">— Sarah M., daughter of a reader in Phoenix, AZ</div>
+    </div>
+  </div>
+
+  <div class="pricing-band" id="pricing">
+    <h2>Simple, honest pricing</h2>
+    <div class="free-pill">✦ First session completely free</div>
+    <div class="price-num">$60</div>
+    <div class="price-sub">per session · no subscription required</div>
+    <ul class="pricing-features">
+      <li>45–60 minute live reading session</li>
+      <li>One-on-one with your personal reader</li>
+      <li>Book chosen together to suit your taste</li>
+      <li>Via Zoom or FaceTime — nothing to install</li>
+      <li>Flexible scheduling, cancel anytime</li>
+    </ul>
+    <button class="btn-white" onclick="showBooking()">Book your free session</button>
+  </div>
+
+  <footer>
+    <p>© 2026 A Chapter Together · <a href="mailto:hello@achaptertogether.org">hello@achaptertogether.org</a></p>
+  </footer>
+
+</div>
+
+<!-- BOOKING PAGE -->
+<div id="bookingPage">
+  <div class="booking-wrap">
+
+    <button class="back-link" onclick="showHome()">← Back to home</button>
+
+    <div class="booking-tag">First session free</div>
+    <h1>Book your first reading session</h1>
+    <p class="subtitle">Fill in a few details and I'll be in touch within 24 hours to confirm your session time.</p>
+
+    <div class="free-reminder">
+      <div class="icon">🎁</div>
+      <p><strong>No credit card needed.</strong> Your first session is completely free. Sessions after that are $60 each.</p>
+    </div>
+
+    <div id="formContent">
+      <div style="font-size: 14px; color: #555; margin-bottom: 0.75rem;">Who is filling out this form?</div>
+      <div class="who-switcher">
+        <button class="who-btn active" id="btnFamily" onclick="switchWho('family')">A family member</button>
+        <button class="who-btn" id="btnSenior" onclick="switchWho('senior')">The senior themselves</button>
+      </div>
+
+      <div class="form-divider">About you</div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="yourFirst">Your first name</label>
+          <input type="text" id="yourFirst" placeholder="Jane" />
+        </div>
+        <div class="field">
+          <label for="yourLast">Your last name</label>
+          <input type="text" id="yourLast" placeholder="Smith" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="yourEmail">Your email address</label>
+        <input type="email" id="yourEmail" placeholder="jane@email.com" />
+      </div>
+
+      <div class="field">
+        <label for="yourPhone">Your phone number <span class="optional">optional</span></label>
+        <input type="tel" id="yourPhone" placeholder="+1 (555) 000-0000" />
+      </div>
+
+      <div id="seniorSection">
+        <div class="form-divider">About the person being read to</div>
+        <div class="field-row">
+          <div class="field">
+            <label for="seniorFirst">Their first name</label>
+            <input type="text" id="seniorFirst" placeholder="Margaret" />
+          </div>
+          <div class="field">
+            <label for="seniorAge">Their age <span class="optional">approx.</span></label>
+            <input type="number" id="seniorAge" placeholder="78" />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-divider">Book preferences</div>
+
+      <div class="field">
+        <label>What genres do they enjoy?</label>
+        <div class="hint">Pick as many as apply</div>
+        <div class="toggle-group">
+          <button class="toggle" onclick="this.classList.toggle('active')">Classic fiction</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Historical fiction</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Mystery &amp; thriller</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Romance</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Biography &amp; memoir</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Nature &amp; travel</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Poetry</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Short stories</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Spiritual &amp; faith</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Not sure yet</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="favBooks">Favourite books or authors? <span class="optional">optional</span></label>
+        <div class="hint">This helps me find something they'll truly love</div>
+        <input type="text" id="favBooks" placeholder="e.g. Agatha Christie, To Kill a Mockingbird..." />
+      </div>
+
+      <div class="field">
+        <label for="anythingElse">Anything else I should know? <span class="optional">optional</span></label>
+        <div class="hint">Hearing, vision, personality, what they're hoping for — anything helps</div>
+        <textarea id="anythingElse" placeholder="e.g. Mum is hard of hearing on her left side, loves a good chat, and hasn't had much company lately..."></textarea>
+      </div>
+
+      <div class="form-divider">Availability</div>
+
+      <div class="field">
+        <label>Which days generally work best?</label>
+        <div class="toggle-group">
+          <button class="toggle" onclick="this.classList.toggle('active')">Monday</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Tuesday</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Wednesday</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Thursday</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Friday</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Weekend</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Preferred time of day (US time)</label>
+        <div class="toggle-group">
+          <button class="toggle" onclick="this.classList.toggle('active')">Morning</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Afternoon</button>
+          <button class="toggle" onclick="this.classList.toggle('active')">Evening</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="timezone">Their time zone</label>
+        <select id="timezone">
+          <option value="">Select a time zone...</option>
+          <option>Eastern Time (ET)</option>
+          <option>Central Time (CT)</option>
+          <option>Mountain Time (MT)</option>
+          <option>Pacific Time (PT)</option>
+          <option>Alaska Time (AKT)</option>
+          <option>Hawaii Time (HT)</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <button class="submit-btn" onclick="submitForm()">Request my free session ✦</button>
+      <p class="privacy-note">Your information is kept private and never shared. I'll reply within 24 hours.</p>
+    </div>
+
+    <div class="success-msg" id="successMsg">
+      <div class="big-icon">📖</div>
+      <h2>You're all set!</h2>
+      <p>Thank you for reaching out. I'll be in touch within 24 hours to confirm your first session.<br><br>Get ready for a good story.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function showBooking() {
+    document.getElementById('homePage').style.display = 'none';
+    document.getElementById('bookingPage').style.display = 'block';
+    window.scrollTo(0, 0);
+  }
+
+  function showHome() {
+    document.getElementById('bookingPage').style.display = 'none';
+    document.getElementById('homePage').style.display = 'block';
+    window.scrollTo(0, 0);
+  }
+
+  function switchWho(who) {
+    const btnFamily = document.getElementById('btnFamily');
+    const btnSenior = document.getElementById('btnSenior');
+    const seniorSection = document.getElementById('seniorSection');
+    if (who === 'family') {
+      btnFamily.classList.add('active');
+      btnSenior.classList.remove('active');
+      seniorSection.style.display = 'block';
+    } else {
+      btnSenior.classList.add('active');
+      btnFamily.classList.remove('active');
+      seniorSection.style.display = 'none';
+    }
+  }
+
+  function submitForm() {
+    const first = document.getElementById('yourFirst').value.trim();
+    const email = document.getElementById('yourEmail').value.trim();
+    if (!first || !email) {
+      alert('Please fill in your name and email address to continue.');
+      return;
+    }
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
