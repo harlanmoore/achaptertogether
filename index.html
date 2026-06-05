@@ -134,7 +134,7 @@
   <div class="nav-logo">A Chapter Together</div>
   <div class="nav-links">
     <a href="#how">How it works</a>
-    <a href="#pricing">Pricing</a>
+    <a href="#" onclick="document.querySelector('.pricing-band').scrollIntoView({behavior:'smooth'}); return false;">Pricing</a>
     <a href="#meet">Meet your reader</a>
   </div>
   <button class="nav-btn" onclick="showBooking()">Book a free session</button>
@@ -225,23 +225,23 @@
   </div>
 
   <div class="section">
-    <div class="section-label">Who it's for</div>
-    <h2>Made for families who care deeply</h2>
+    <div class="section-label">This is for you if...</div>
+    <h2>You deserve someone to share a good story with</h2>
     <div class="who-cards">
       <div class="who-card">
-        <div class="who-icon">❤️</div>
-        <h3>Adult children</h3>
-        <p>Living far away? Give your parent more than entertainment — give them someone who reads with them, laughs with them, and genuinely wants to hear what they think.</p>
-      </div>
-      <div class="who-card">
         <div class="who-icon">📖</div>
-        <h3>Seniors themselves</h3>
-        <p>Love books but want someone to share them with? Each session ends with 15 minutes of discussion — your thoughts, your opinions, your take on the story.</p>
+        <h3>You love books</h3>
+        <p>Whether it's mysteries, memoirs, classic fiction or poetry — we'll find something you'll truly look forward to each week.</p>
       </div>
       <div class="who-card">
-        <div class="who-icon">🏠</div>
-        <h3>Care facilities</h3>
-        <p>Enrich your residents' days with regular reading sessions. We'd love to partner with you.</p>
+        <div class="who-icon">💬</div>
+        <h3>You love a good conversation</h3>
+        <p>The discussion is often the best part. Your opinions, your take on the characters, your memories triggered by the story — all of it welcome.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🤝</div>
+        <h3>You want real connection</h3>
+        <p>Not an app, not an audiobook — a real person who shows up every week, remembers where you left off, and genuinely looks forward to seeing you.</p>
       </div>
     </div>
   </div>
@@ -253,7 +253,7 @@
     </div>
   </div>
 
-  <div class="pricing-band" id="pricing">
+  <div class="pricing-band">
     <h2>Simple, honest pricing</h2>
     <div class="free-pill">✦ First session completely free</div>
     <div class="price-num">$60</div>
@@ -276,57 +276,6 @@
 </div>
 
 <!-- BOOKING PAGE -->
-
-  <div class="section">
-    <div class="section-label">Who it's for</div>
-    <h2>Made for families who care deeply</h2>
-    <div class="who-cards">
-      <div class="who-card">
-        <div class="who-icon">❤️</div>
-        <h3>Adult children</h3>
-        <p>Living far away? Give your parent more than entertainment — give them someone who reads with them, laughs with them, and genuinely wants to hear what they think.</p>
-      </div>
-      <div class="who-card">
-        <div class="who-icon">📖</div>
-        <h3>Seniors themselves</h3>
-        <p>Love books but want someone to share them with? Each session ends with 15 minutes of discussion — your thoughts, your opinions, your take on the story.</p>
-      </div>
-      <div class="who-card">
-        <div class="who-icon">🏠</div>
-        <h3>Care facilities</h3>
-        <p>Enrich your residents' days with regular reading sessions. We'd love to partner with you.</p>
-      </div>
-    </div>
-  </div>
-
-  <div style="padding: 0 2rem 3rem; max-width: 860px; margin: 0 auto;">
-    <div class="testimonial-wrap">
-      <p>"My mother hadn't lit up like that in months. Her reader remembered what chapter they'd left off on and asked how her garden was doing. It felt like a visit from a dear friend."</p>
-      <div class="testimonial-author">— Sarah M., daughter of a reader in Phoenix, AZ</div>
-    </div>
-  </div>
-
-  <div class="pricing-band" id="pricing">
-    <h2>Simple, honest pricing</h2>
-    <div class="free-pill">✦ First session completely free</div>
-    <div class="price-num">$60</div>
-    <div class="price-sub">per session · no subscription required</div>
-    <ul class="pricing-features">
-      <li>45-minute live session over Zoom or FaceTime</li>
-      <li>30 minutes reading + 15 minutes discussion &amp; conversation</li>
-      <li>One-on-one with Harlan — your personal reader</li>
-      <li>Book chosen together to suit your taste</li>
-      <li>Flexible scheduling, cancel anytime</li>
-      <li>Via Zoom or FaceTime — nothing to install</li>
-    </ul>
-    <button class="btn-white" onclick="showBooking()">Book your free session</button>
-  </div>
-
-  <footer>
-    <p>© 2026 A Chapter Together · <a href="mailto:harlanmoore@gmail.com">harlanmoore@gmail.com</a></p>
-  </footer>
-
-</div>
 
 <div id="bookingPage">
   <div class="booking-wrap">
@@ -469,15 +418,21 @@
 
 <script>
   function showBooking() {
-    document.getElementById('homePage').style.display = 'none';
-    document.getElementById('bookingPage').style.display = 'block';
-    window.scrollTo(0, 0);
+    var home = document.getElementById('homePage');
+    var booking = document.getElementById('bookingPage');
+    home.style.display = 'none';
+    booking.style.display = 'block';
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 
   function showHome() {
-    document.getElementById('bookingPage').style.display = 'none';
-    document.getElementById('homePage').style.display = 'block';
-    window.scrollTo(0, 0);
+    var home = document.getElementById('homePage');
+    var booking = document.getElementById('bookingPage');
+    booking.style.display = 'none';
+    home.style.display = 'block';
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 
   function switchWho(who) {
