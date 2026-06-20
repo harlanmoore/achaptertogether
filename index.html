@@ -196,6 +196,7 @@
     <a href="#how">How it works</a>
     <a href="#" onclick="document.querySelector('.pricing-band').scrollIntoView({behavior:'smooth'}); return false;">Pricing</a>
     <a href="#meet">Meet your reader</a>
+    <a href="#" onclick="showRepeat(); return false;">Returning client</a>
   </div>
   <button class="nav-btn" onclick="showBooking()">Book a free session</button>
 </nav>
@@ -209,6 +210,9 @@
     <p style="font-size:16px; margin-bottom:1.75rem;">Live one-on-one sessions over Zoom or FaceTime — reading, laughing, debating, and sharing thoughts together.</p>
     <button class="btn-primary" onclick="showBooking()">Book your free session</button>
     <button class="btn-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</button>
+    <div style="margin-top:1.25rem;">
+      <a href="#" onclick="showRepeat(); return false;" style="font-size:14px; color:#0F6E56; font-weight:600; text-decoration:none;">Already a client? Book your next session →</a>
+    </div>
   </div>
 
   <div class="meet" id="meet" style="padding: 4rem 2rem;">
@@ -261,6 +265,7 @@ Now I'd like to share that with you.</p>
         <div class="step-num">4</div>
         <h3>Keep the story going</h3>
         <p>Book regular weekly sessions at $60 each. Seniors often say the discussion is their favourite part — a chance to share their thoughts with someone who genuinely listens.</p>
+        <a href="#" onclick="showRepeat(); return false;" style="display:inline-block; margin-top:0.85rem; padding:8px 16px; border:1.5px solid #1D9E75; border-radius:8px; font-size:14px; font-weight:600; color:#0F6E56; text-decoration:none;">Book your next session →</a>
       </div>
     </div>
   </div>
@@ -369,6 +374,10 @@ Now I'd like to share that with you.</p>
       <div class="icon">🎁</div>
       <p><strong>No credit card needed.</strong> Your first session is completely free. Sessions after that are $60 each.</p>
     </div>
+
+    <p style="text-align:center; font-size:14px; color:#555; margin:-1rem 0 1.5rem;">
+      Already had your first session? <a href="#" onclick="showRepeat(); return false;" style="color:#0F6E56; font-weight:600; text-decoration:none;">Book your next one →</a>
+    </p>
 
     <div id="formContent">
       <div style="font-size: 14px; color: #555; margin-bottom: 0.75rem;">Who is filling out this form?</div>
@@ -495,23 +504,67 @@ Now I'd like to share that with you.</p>
   </div>
 </div>
 
+<!-- REPEAT BOOKING PAGE (returning clients) -->
+<div id="repeatPage" style="display:none;">
+  <div class="booking-wrap">
+
+    <button class="back-link" onclick="showHome()">← Back to home</button>
+
+    <div class="booking-tag">Welcome back</div>
+    <h1>Book your next session</h1>
+    <p class="subtitle">Pick a time that suits you below. You'll get an email confirmation with your video link — there's nothing to download or install.</p>
+
+    <div id="repeatPlaceholder" style="display:none; background:#FFF8E1; border:1px solid #F0E0A0; border-radius:10px; padding:1.5rem; color:#6b5a1f; font-size:14px; line-height:1.65;">
+      <strong>Almost ready.</strong> The live booking calendar will appear here once your Google appointment-schedule link is added (one line in the page — see the setup note). Until then, returning clients can reach you on <a href="https://wa.me/14252691221" target="_blank" rel="noopener" style="color:#0F6E56; font-weight:600;">WhatsApp</a> to book.
+    </div>
+
+    <iframe id="googleBookingFrame" title="Book your next session" src="about:blank"
+      style="border:0; width:100%; min-height:640px; border-radius:10px;" loading="lazy"></iframe>
+
+    <p class="privacy-note" style="margin-top:1rem;">Prefer to message me instead? Reach me on <a href="https://wa.me/14252691221" target="_blank" rel="noopener">WhatsApp</a>.</p>
+
+  </div>
+</div>
 <script>
-  function showBooking() {
-    var home = document.getElementById('homePage');
-    var booking = document.getElementById('bookingPage');
-    home.style.display = 'none';
-    booking.style.display = 'block';
+  // ============================================================
+  //  ⬇️  PASTE YOUR GOOGLE APPOINTMENT SCHEDULE LINK HERE  ⬇️
+  //  In Google Calendar, open your appointment schedule, click
+  //  "Share" / "Open booking page", copy the link, and paste it
+  //  between the quotes below. Leave it empty until you have it —
+  //  the page will show a friendly "almost ready" note instead of
+  //  a blank box.
+  var GOOGLE_BOOKING_URL = "";
+  //  ⬆️  --------------------------------------------------------
+  // ============================================================
+
+  function setView(view) {
+    ['homePage', 'bookingPage', 'repeatPage'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.style.display = (id === view) ? 'block' : 'none';
+    });
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
 
-  function showHome() {
-    var home = document.getElementById('homePage');
-    var booking = document.getElementById('bookingPage');
-    booking.style.display = 'none';
-    home.style.display = 'block';
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+  function showBooking() { setView('bookingPage'); }
+  function showHome() { setView('homePage'); }
+
+  function showRepeat() {
+    setView('repeatPage');
+    var frame = document.getElementById('googleBookingFrame');
+    var placeholder = document.getElementById('repeatPlaceholder');
+    if (GOOGLE_BOOKING_URL) {
+      placeholder.style.display = 'none';
+      frame.style.display = 'block';
+      if (frame.getAttribute('src') !== GOOGLE_BOOKING_URL) {
+        frame.setAttribute('src', GOOGLE_BOOKING_URL);
+      }
+    } else {
+      // No link added yet — show the note instead of a blank frame
+      frame.style.display = 'none';
+      placeholder.style.display = 'block';
+    }
+    if (typeof fbq === 'function') { fbq('track', 'Schedule'); }
   }
 
   function switchWho(who) {
