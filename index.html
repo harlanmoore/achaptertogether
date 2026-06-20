@@ -515,11 +515,11 @@ Now I'd like to share that with you.</p>
     <p class="subtitle">Pick a time that suits you below. You'll get an email confirmation with your video link — there's nothing to download or install.</p>
 
     <div id="repeatPlaceholder" style="display:none; background:#FFF8E1; border:1px solid #F0E0A0; border-radius:10px; padding:1.5rem; color:#6b5a1f; font-size:14px; line-height:1.65;">
-      <strong>Almost ready.</strong> The live booking calendar will appear here once your Google appointment-schedule link is added (one line in the page — see the setup note). Until then, returning clients can reach you on <a href="https://wa.me/14252691221" target="_blank" rel="noopener" style="color:#0F6E56; font-weight:600;">WhatsApp</a> to book.
+      <strong>Almost ready.</strong> The booking button will appear here once your Google appointment-schedule link is added. Until then, returning clients can reach you on <a href="https://wa.me/14252691221" target="_blank" rel="noopener" style="color:#0F6E56; font-weight:600;">WhatsApp</a> to book.
     </div>
 
-    <iframe id="googleBookingFrame" title="Book your next session" src="about:blank"
-      style="border:0; width:100%; min-height:640px; border-radius:10px;" loading="lazy"></iframe>
+    <a id="googleBookingBtn" class="submit-btn" style="display:inline-block; text-align:center; text-decoration:none;" href="https://calendar.app.google/C5oU5NxPGTwBEXRw7" target="_blank" rel="noopener">Choose a time on the calendar ↗</a>
+    <p class="privacy-note" style="margin-top:0.75rem;">Opens in a new tab. Pick a time, and your confirmation with the video link will arrive by email.</p>
 
     <p class="privacy-note" style="margin-top:1rem;">Prefer to message me instead? Reach me on <a href="https://wa.me/14252691221" target="_blank" rel="noopener">WhatsApp</a>.</p>
 
@@ -533,7 +533,7 @@ Now I'd like to share that with you.</p>
   //  between the quotes below. Leave it empty until you have it —
   //  the page will show a friendly "almost ready" note instead of
   //  a blank box.
-  var GOOGLE_BOOKING_URL = "";
+  var GOOGLE_BOOKING_URL = "https://calendar.app.google/C5oU5NxPGTwBEXRw7";
   //  ⬆️  --------------------------------------------------------
   // ============================================================
 
@@ -551,17 +551,13 @@ Now I'd like to share that with you.</p>
 
   function showRepeat() {
     setView('repeatPage');
-    var frame = document.getElementById('googleBookingFrame');
+    var btn = document.getElementById('googleBookingBtn');
     var placeholder = document.getElementById('repeatPlaceholder');
     if (GOOGLE_BOOKING_URL) {
       placeholder.style.display = 'none';
-      frame.style.display = 'block';
-      if (frame.getAttribute('src') !== GOOGLE_BOOKING_URL) {
-        frame.setAttribute('src', GOOGLE_BOOKING_URL);
-      }
+      btn.style.display = 'inline-block';
     } else {
-      // No link added yet — show the note instead of a blank frame
-      frame.style.display = 'none';
+      btn.style.display = 'none';
       placeholder.style.display = 'block';
     }
     if (typeof fbq === 'function') { fbq('track', 'Schedule'); }
