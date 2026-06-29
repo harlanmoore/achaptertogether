@@ -136,19 +136,12 @@ body { font-family: 'Inter', sans-serif; background: #fafaf8; color: #1a1a1a; }
 
 /* NAV */
 
-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid #e8e6e0; background: white; position: sticky; top: 0; z-index: 10; }
 
-.nav-logo { font-size: 18px; font-weight: 500; color: #085041; }
 
-.nav-links { display: flex; gap: 24px; align-items: center; }
 
-.nav-links a { font-size: 14px; color: #555; text-decoration: none; }
 
-.nav-links a:hover { color: #085041; }
 
-.nav-btn { background: #1D9E75; color: white; border: none; padding: 9px 20px; border-radius: 8px; font-size: 14px; cursor: pointer; font-family: inherit; }
 
-.nav-btn:hover { background: #0F6E56; }
 
 /* PAGE SWITCHING */
 
@@ -344,6 +337,41 @@ footer a { color: #9FE1CB; text-decoration: none; }
 
 }
 
+
+nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid #e8e6e0; background: white; position: sticky; top: 0; z-index: 50; }
+.nav-logo { font-size: 18px; font-weight: 500; color: #085041; text-decoration: none; }
+.nav-links { display: flex; gap: 22px; align-items: center; }
+.nav-links a { font-size: 14px; color: #555; text-decoration: none; }
+.nav-links a:hover { color: #085041; }
+.nav-links a.current { color: #085041; font-weight: 500; }
+.nav-dd { position: relative; }
+.nav-dd > a.dd-trigger { font-size: 14px; color: #555; text-decoration: none; display: flex; align-items: center; gap: 4px; }
+.nav-dd > a.dd-trigger:hover { color: #085041; }
+.nav-dd > a.dd-trigger.current { color: #085041; font-weight: 500; }
+.nav-dd-menu { position: absolute; top: 150%; right: 0; background: white; border: 1px solid #e8e6e0; border-radius: 10px; padding: 6px; min-width: 250px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); display: none; flex-direction: column; }
+.nav-dd:hover .nav-dd-menu { display: flex; }
+.nav-dd-menu a { padding: 9px 12px; border-radius: 7px; font-size: 14px; color: #555; }
+.nav-dd-menu a:hover { background: #E1F5EE; color: #085041; }
+.nav-dd-menu a.current { color: #085041; font-weight: 500; }
+.nav-dd-menu .dd-sep { border-top: 1px solid #f0eee8; margin: 5px 4px; }
+.nav-cta { background: #1D9E75; color: white; padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; }
+.nav-cta:hover { background: #0F6E56; color: white; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: #085041; margin: 4px 0; border-radius: 2px; }
+.mobile-menu { display: none; flex-direction: column; background: white; border-bottom: 1px solid #e8e6e0; padding: 0.5rem 2rem 1.25rem; position: sticky; top: 61px; z-index: 49; }
+.mobile-menu a { padding: 11px 0; font-size: 15px; color: #444; text-decoration: none; border-bottom: 1px solid #f0eee8; }
+.mobile-menu a.current { color: #085041; font-weight: 500; }
+.mobile-menu .mm-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #aaa; padding: 14px 0 4px; border: none; }
+.mobile-menu.open { display: flex; }
+@media (max-width: 860px) { .nav-links { display: none; } .nav-toggle { display: block; } }
+
+
+footer { background: #1a1a1a; color: #888; text-align: center; padding: 2.5rem 2rem; font-size: 13px; }
+footer a { color: #9FE1CB; text-decoration: none; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid #333; }
+.footer-links a { color: #ccc; font-size: 14px; }
+.footer-links a:hover { color: #9FE1CB; }
+
 </style>
 
 </head>
@@ -351,26 +379,40 @@ footer a { color: #9FE1CB; text-decoration: none; }
 <body>
 
 <nav>
-
-<a href="#" onclick="showHome(); return false;" class="nav-logo" style="text-decoration:none;">A Chapter Together</a>
-
-<div class="nav-links">
-
-<a href="#how">How it works</a>
-
-<a href="#" onclick="document.querySelector('.pricing-band').scrollIntoView({behavior:'smooth'}); return false;">Pricing</a>
-
-<a href="#meet">Meet your reader</a>
-
-<a href="senior-loneliness.html">Senior loneliness</a>
-
-<a href="#" onclick="showRepeat(); return false;">Returning client</a>
-
-</div>
-
-<button class="nav-btn" onclick="showBooking()">Book a free session</button>
-
+  <a href="#" onclick="showHome(); return false;" class="nav-logo" style="text-decoration:none;">A Chapter Together</a>
+  <div class="nav-links">
+    <a href="#" onclick="showHome(); return false;" class="current">Reading sessions</a>
+    <a href="meditation-coaching.html">Meditation coaching</a>
+    <a href="companionship.html">Companionship</a>
+    <a href="grief-support.html">Grief support</a>
+    <div class="nav-dd">
+      <a href="resources.html" class="dd-trigger">Resources ▾</a>
+      <div class="nav-dd-menu">
+        <a href="resources.html">All resources</a>
+        <div class="dd-sep"></div>
+        <a href="senior-loneliness.html">Understanding senior loneliness</a>
+        <a href="overcoming-loneliness.html">10 ways to overcome loneliness</a>
+        <a href="meditation-for-seniors.html">Benefits of meditation</a>
+      </div>
+    </div>
+    <a href="#" onclick="showBooking(); return false;" class="nav-cta">Book free session</a>
+  </div>
+  <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="showHome(); document.getElementById('mobileMenu').classList.remove('open'); return false;" class="current">Reading sessions</a>
+  <a href="meditation-coaching.html">Meditation coaching</a>
+  <a href="companionship.html">Companionship</a>
+  <a href="grief-support.html">Grief support</a>
+  <div class="mm-label">Resources</div>
+  <a href="resources.html" style="border:none; padding-bottom:2px;">All resources</a>
+  <a href="senior-loneliness.html">Understanding senior loneliness</a>
+  <a href="overcoming-loneliness.html">10 ways to overcome loneliness</a>
+  <a href="meditation-for-seniors.html">Benefits of meditation</a>
+  <a href="#" onclick="showBooking(); document.getElementById('mobileMenu').classList.remove('open'); return false;" style="color:#0F6E56; font-weight:500;">Book a free session →</a>
+</div>
 
 <!-- HOME PAGE -->
 
@@ -646,40 +688,88 @@ Now I'd like to share that with you.</p>
 
 </div>
 
-<div style="background:#fafaf8; padding: 3rem 2rem; border-top: 1px solid #e8e6e0;">
+<!-- SERVICES LINEUP -->
+<div style="background:#fafaf8; padding: 4rem 2rem; border-top: 1px solid #e8e6e0;">
+<div style="max-width:920px; margin:0 auto;">
+<div style="text-align:center; margin-bottom:2.25rem;">
+<p style="font-size:13px; color:#0F6E56; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem;">Ways to connect</p>
+<h2 style="font-size:30px; font-weight:500; color:#1a1a1a;">Four kinds of company, one familiar face</h2>
+<p style="font-size:16px; color:#666; max-width:540px; margin:0.75rem auto 0; line-height:1.7;">Every session is one-on-one with Harlan, over Zoom or FaceTime. The first one is always free.</p>
+</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:16px;">
 
-<div style="max-width:760px; margin:0 auto; text-align:center;">
-
-<p style="font-size:13px; color:#888; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1.25rem;">Looking for something a little different?</p>
-
-<div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
-
-<a href="companionship.html" style="flex:1; min-width:240px; max-width:320px; background:white; border:1px solid #e8e6e0; border-radius:12px; padding:1.5rem; text-decoration:none; color:#1a1a1a;">
-
-<strong style="display:block; margin-bottom:6px; color:#085041;">Just want company?</strong>
-
-<span style="font-size:14px; color:#666;">Regular friendly visits, conversation, no reading required. →</span>
-
+<a href="#" onclick="showHome(); window.scrollTo({top:0,behavior:'smooth'}); return false;" style="background:white; border:1px solid #e8e6e0; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
+<div style="font-size:26px; margin-bottom:10px;">📖</div>
+<strong style="display:block; font-size:16px; color:#085041; margin-bottom:6px;">Reading sessions</strong>
+<span style="font-size:14px; color:#666; line-height:1.6;">A good book read aloud, then a real conversation about it. $60 · free first session.</span>
 </a>
 
-<a href="grief-support.html" style="flex:1; min-width:240px; max-width:320px; background:white; border:1px solid #e8e6e0; border-radius:12px; padding:1.5rem; text-decoration:none; color:#1a1a1a;">
+<a href="meditation-coaching.html" style="background:white; border:1px solid #e8e6e0; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
+<div style="font-size:26px; margin-bottom:10px;">🧘</div>
+<strong style="display:block; font-size:16px; color:#085041; margin-bottom:6px;">Meditation coaching</strong>
+<span style="font-size:14px; color:#666; line-height:1.6;">Gentle one-on-one guided meditation, or a calm-and-company blend. $60 · free first session.</span>
+</a>
 
-<strong style="display:block; margin-bottom:6px; color:#8C7245;">Grieving someone?</strong>
+<a href="companionship.html" style="background:white; border:1px solid #e8e6e0; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
+<div style="font-size:26px; margin-bottom:10px;">💬</div>
+<strong style="display:block; font-size:16px; color:#085041; margin-bottom:6px;">Companionship</strong>
+<span style="font-size:14px; color:#666; line-height:1.6;">Regular friendly visits and conversation, no reading required. $60 · free first visit.</span>
+</a>
 
-<span style="font-size:14px; color:#666;">A gentle space made for that, with a free first conversation. →</span>
-
+<a href="grief-support.html" style="background:white; border:1px solid #e8e6e0; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
+<div style="font-size:26px; margin-bottom:10px;">🤍</div>
+<strong style="display:block; font-size:16px; color:#8C7245; margin-bottom:6px;">Grief support</strong>
+<span style="font-size:14px; color:#666; line-height:1.6;">A listening companion to talk about the person you lost. Free 15-min first conversation.</span>
 </a>
 
 </div>
-
+</div>
 </div>
 
+<!-- RESOURCES -->
+<div id="resources" style="background:#E1F5EE; padding: 4rem 2rem;">
+<div style="max-width:920px; margin:0 auto;">
+<div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; margin-bottom:2rem;">
+<div>
+<p style="font-size:13px; color:#0F6E56; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem;">Free resources</p>
+<h2 style="font-size:30px; font-weight:500; color:#085041;">Honest, well-researched reading</h2>
 </div>
+<a href="resources.html" style="font-size:15px; color:#0F6E56; font-weight:500; text-decoration:none; white-space:nowrap;">View all resources →</a>
+</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px;">
+
+<a href="senior-loneliness.html" style="background:white; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
+<span style="font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.07em; color:#0F6E56;">Guide</span>
+<strong style="display:block; font-size:17px; color:#1a1a1a; margin:6px 0 8px; line-height:1.3;">Understanding senior loneliness</strong>
+<span style="font-size:14px; color:#666; line-height:1.6;">How common it is, why it happens, the health impacts, and what helps. 10-min read →</span>
+</a>
+
+<a href="overcoming-loneliness.html" style="background:white; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
+<span style="font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.07em; color:#0F6E56;">Practical guide</span>
+<strong style="display:block; font-size:17px; color:#1a1a1a; margin:6px 0 8px; line-height:1.3;">10 ways to overcome loneliness</strong>
+<span style="font-size:14px; color:#666; line-height:1.6;">Simple, do-this-today steps to feel more connected. 7-min read →</span>
+</a>
+
+<a href="meditation-for-seniors.html" style="background:white; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
+<span style="font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.07em; color:#0F6E56;">Wellbeing guide</span>
+<strong style="display:block; font-size:17px; color:#1a1a1a; margin:6px 0 8px; line-height:1.3;">The benefits of meditation for seniors</strong>
+<span style="font-size:14px; color:#666; line-height:1.6;">What the research says, plus a gentle way to begin. 8-min read →</span>
+</a>
+
+</div>
+</div>
+</div>
+
 
 <footer>
-
-<p>© 2026 A Chapter Together · <a href="mailto:harlanmoore@gmail.com">harlanmoore@gmail.com</a> · <a href="https://wa.me/14252691221" target="_blank" rel="noopener">WhatsApp +1 (425) 269-1221</a></p>
-
+  <div class="footer-links">
+    <a href="index.html">Reading sessions</a>
+    <a href="meditation-coaching.html">Meditation coaching</a>
+    <a href="companionship.html">Companionship</a>
+    <a href="grief-support.html">Grief support</a>
+    <a href="resources.html">Resources</a>
+  </div>
+  <p>© 2026 A Chapter Together · <a href="mailto:harlanmoore@gmail.com">harlanmoore@gmail.com</a> · <a href="https://wa.me/14252691221" target="_blank" rel="noopener">WhatsApp +1 (425) 269-1221</a></p>
 </footer>
 
 </div>
