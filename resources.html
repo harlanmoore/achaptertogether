@@ -55,32 +55,8 @@ src="https://www.facebook.com/tr?id=332609950231827&ev=PageView&noscript=1"/></n
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Inter', sans-serif; background: #fafaf8; color: #1a1a1a; }
 
-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid #e8e6e0; background: white; position: sticky; top: 0; z-index: 50; }
-.nav-logo { font-size: 18px; font-weight: 500; color: #085041; text-decoration: none; }
-.nav-links { display: flex; gap: 22px; align-items: center; }
-.nav-links a { font-size: 14px; color: #555; text-decoration: none; }
-.nav-links a:hover { color: #085041; }
-.nav-links a.current { color: #085041; font-weight: 500; }
-.nav-dd { position: relative; }
-.nav-dd > a.dd-trigger { font-size: 14px; color: #555; text-decoration: none; display: flex; align-items: center; gap: 4px; }
 .nav-dd > a.dd-trigger:hover { color: #085041; }
 .nav-dd > a.dd-trigger.current { color: #085041; font-weight: 500; }
-.nav-dd-menu { position: absolute; top: 150%; right: 0; background: white; border: 1px solid #e8e6e0; border-radius: 10px; padding: 6px; min-width: 250px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); display: none; flex-direction: column; }
-.nav-dd:hover .nav-dd-menu { display: flex; }
-.nav-dd-menu a { padding: 9px 12px; border-radius: 7px; font-size: 14px; color: #555; }
-.nav-dd-menu a:hover { background: #E1F5EE; color: #085041; }
-.nav-dd-menu a.current { color: #085041; font-weight: 500; }
-.nav-dd-menu .dd-sep { border-top: 1px solid #f0eee8; margin: 5px 4px; }
-.nav-cta { background: #1D9E75; color: white; padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; }
-.nav-cta:hover { background: #0F6E56; color: white; }
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-.nav-toggle span { display: block; width: 22px; height: 2px; background: #085041; margin: 4px 0; border-radius: 2px; }
-.mobile-menu { display: none; flex-direction: column; background: white; border-bottom: 1px solid #e8e6e0; padding: 0.5rem 2rem 1.25rem; position: sticky; top: 61px; z-index: 49; }
-.mobile-menu a { padding: 11px 0; font-size: 15px; color: #444; text-decoration: none; border-bottom: 1px solid #f0eee8; }
-.mobile-menu a.current { color: #085041; font-weight: 500; }
-.mobile-menu .mm-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #aaa; padding: 14px 0 4px; border: none; }
-.mobile-menu.open { display: flex; }
-@media (max-width: 860px) { .nav-links { display: none; } .nav-toggle { display: block; } }
 
 
 footer { background: #1a1a1a; color: #888; text-align: center; padding: 2.5rem 2rem; font-size: 13px; }
@@ -110,6 +86,47 @@ footer a { color: #9FE1CB; text-decoration: none; }
 .svc-links a { background: white; border: 1px solid #e8e6e0; border-radius: 999px; padding: 10px 20px; font-size: 14px; color: #085041; text-decoration: none; font-weight: 500; }
 .svc-links a:hover { border-color: #1D9E75; background: #E1F5EE; }
 @media (max-width: 600px) { .hero h1 { font-size: 27px; } .rcard { flex-direction: column; text-align: center; } }
+
+/* === NAV === */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid #e8e6e0; background: white; position: sticky; top: 0; z-index: 50; }
+.nav-logo { font-size: 18px; font-weight: 500; color: #085041; text-decoration: none; }
+.nav-links { display: flex; gap: 22px; align-items: center; }
+.nav-links > a { font-size: 14px; color: #555; text-decoration: none; }
+.nav-links > a:hover { color: #085041; }
+.nav-links > a.current { color: #085041; font-weight: 500; }
+.nav-dd { position: relative; display: flex; align-items: center; }
+.nav-dd > a.dd-trigger { font-size: 14px; color: #555; text-decoration: none; display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.nav-dd > a.dd-trigger:hover,
+.nav-dd > a.dd-trigger.current { color: #085041; font-weight: 500; }
+/* Invisible bridge fills the gap so mouse doesn't lose hover */
+.nav-dd-menu {
+  position: absolute; top: 100%; right: 0;
+  padding-top: 10px; /* bridge — mouse travels over this invisible space */
+  display: none; flex-direction: column;
+}
+.nav-dd-menu-inner {
+  background: white; border: 1px solid #e8e6e0; border-radius: 10px;
+  padding: 6px; min-width: 250px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  display: flex; flex-direction: column;
+}
+.nav-dd:hover .nav-dd-menu { display: flex; }
+.nav-dd-menu a { padding: 9px 12px; border-radius: 7px; font-size: 14px; color: #444; text-decoration: none; display: block; }
+.nav-dd-menu a:hover { background: #E1F5EE; color: #085041; }
+.nav-dd-menu a.current { color: #085041; font-weight: 500; }
+.nav-dd-menu .dd-sep { border-top: 1px solid #f0eee8; margin: 5px 4px; }
+.nav-cta { background: #1D9E75; color: white; padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap; }
+.nav-cta:hover { background: #0F6E56; color: white; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: #085041; margin: 4px 0; border-radius: 2px; transition: 0.2s; }
+.mobile-menu { display: none; flex-direction: column; background: white; border-bottom: 1px solid #e8e6e0; padding: 0.5rem 2rem 1.25rem; position: sticky; top: 61px; z-index: 49; }
+.mobile-menu > a { padding: 11px 0; font-size: 15px; color: #444; text-decoration: none; border-bottom: 1px solid #f0eee8; display: block; }
+.mobile-menu > a.current { color: #085041; font-weight: 500; }
+.mobile-menu .mm-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #aaa; padding: 14px 0 4px; }
+.mobile-menu.open { display: flex; }
+@media (max-width: 860px) { .nav-links { display: none; } .nav-toggle { display: block; } }
+/* === END NAV === */
+
 </style>
 </head>
 <body>
@@ -123,13 +140,13 @@ footer a { color: #9FE1CB; text-decoration: none; }
     <a href="grief-support.html">Grief support</a>
     <div class="nav-dd">
       <a href="resources.html" class="dd-trigger current">Resources ▾</a>
-      <div class="nav-dd-menu">
+      <div class="nav-dd-menu"><div class="nav-dd-menu-inner">
         <a href="resources.html" class="current">All resources</a>
         <div class="dd-sep"></div>
         <a href="senior-loneliness.html">Understanding senior loneliness</a>
         <a href="overcoming-loneliness.html">10 ways to overcome loneliness</a>
         <a href="meditation-for-seniors.html">Benefits of meditation</a>
-      </div>
+      </div></div>
     </div>
     <a href="index.html" class="nav-cta">Book free session</a>
   </div>
