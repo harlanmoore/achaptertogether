@@ -16,6 +16,7 @@
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://achaptertogether.org/senior-loneliness.html" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,8 +41,7 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DZR4T1YFC"></script>
 <script>
@@ -66,138 +66,92 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=332609950231827&ev=PageView&noscript=1"/></noscript>
 
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Inter', sans-serif; background: #fafaf8; color: #1a1a1a; }
-
-.nav-dd > a.dd-trigger:hover { color: #085041; }
-.nav-dd > a.dd-trigger.current { color: #085041; font-weight: 500; }
-
-
-footer { background: #1a1a1a; color: #888; text-align: center; padding: 2.5rem 2rem; font-size: 13px; }
-footer a { color: #9FE1CB; text-decoration: none; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid #333; }
-.footer-links a { color: #ccc; font-size: 14px; }
-.footer-links a:hover { color: #9FE1CB; }
-
-.hero { background: #E1F5EE; padding: 3.5rem 2rem; text-align: center; }
-.hero-tag { font-size: 13px; color: #0F6E56; background: #9FE1CB; padding: 4px 16px; border-radius: 20px; display: inline-block; margin-bottom: 1.25rem; }
-.hero h1 { font-size: 36px; font-weight: 500; color: #085041; line-height: 1.2; margin-bottom: 1rem; max-width: 680px; margin-left: auto; margin-right: auto; }
-.hero .deck { font-size: 18px; color: #0F6E56; line-height: 1.6; max-width: 600px; margin: 0 auto 1rem; }
-.hero .byline { font-size: 13px; color: #4f8a78; }
+/* === Article-specific styles === */
+.hero-tag { font-size: 13px; color: var(--sage); background: var(--sage-soft); padding: 4px 16px; border-radius: 20px; display: inline-block; margin-bottom: 1.25rem; }
+.hero h1 { font-size: 36px; font-weight: 500; color: var(--sage); line-height: 1.2; margin-bottom: 1rem; max-width: 680px; margin-left: auto; margin-right: auto; }
+.hero .deck { font-size: 18px; color: var(--ink-soft); line-height: 1.6; max-width: 600px; margin: 0 auto 1rem; }
+.hero .byline { font-size: 13px; color: var(--muted); }
 .article { max-width: 720px; margin: 0 auto; padding: 2.5rem 2rem 1rem; }
-.article .intro-p { font-size: 19px; color: #1a1a1a; line-height: 1.75; margin-bottom: 1.25rem; }
-.article .intro-p::first-letter { font-size: 3.4rem; font-weight: 500; float: left; line-height: 0.8; padding: 0.3rem 0.6rem 0 0; color: #1D9E75; }
-.article-section { padding: 2.25rem 0; border-top: 1px solid #e8e6e0; }
+.article .intro-p { font-size: 19px; color: var(--ink); line-height: 1.75; margin-bottom: 1.25rem; }
+.article .intro-p::first-letter { font-size: 3.4rem; font-weight: 500; float: left; line-height: 0.8; padding: 0.3rem 0.6rem 0 0; color: var(--sage); }
+.article-section { padding: 2.25rem 0; border-top: 1px solid var(--line); }
 .article-section:first-of-type { border-top: none; }
-.sec-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #0F6E56; margin-bottom: 0.6rem; display: flex; align-items: baseline; gap: 0.6rem; }
-.sec-num { font-size: 14px; font-weight: 600; color: #1D9E75; }
-.article-section h2 { font-size: 25px; font-weight: 500; color: #1a1a1a; line-height: 1.25; margin-bottom: 1rem; }
-.article-section p { font-size: 16.5px; color: #444; line-height: 1.8; margin-bottom: 1.15rem; }
+.sec-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.6rem; display: flex; align-items: baseline; gap: 0.6rem; }
+.sec-num { font-size: 14px; font-weight: 600; color: var(--rose); }
+.article-section h2 { font-size: 25px; font-weight: 500; color: var(--ink); line-height: 1.25; margin-bottom: 1rem; }
+.article-section p { font-size: 16.5px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 1.15rem; }
 .article-section p:last-child { margin-bottom: 0; }
-sup.ref a { color: #1D9E75; text-decoration: none; font-weight: 600; }
-.statcard { background: #E1F5EE; border-left: 4px solid #1D9E75; border-radius: 10px; padding: 1.5rem 1.75rem; margin: 1.75rem 0; }
-.statcard-fig { font-size: 30px; font-weight: 500; color: #085041; line-height: 1.1; margin-bottom: 0.5rem; }
-.statcard-lab { font-size: 16px; color: #0F6E56; line-height: 1.5; margin-bottom: 0.4rem; }
-.statcard-src { font-size: 12px; color: #4f8a78; }
+sup.ref a { color: var(--sage); text-decoration: none; font-weight: 600; }
+.statcard { background: var(--sage-soft); border-left: 4px solid var(--sage); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 1.75rem 0; }
+.statcard-fig { font-size: 30px; font-weight: 500; color: var(--sage); line-height: 1.1; margin-bottom: 0.5rem; font-family: var(--font-display); }
+.statcard-lab { font-size: 16px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 0.4rem; }
+.statcard-src { font-size: 12px; color: var(--muted); }
 .bridge { max-width: 720px; margin: 2.5rem auto 1rem; padding: 0 2rem; }
-.bridge-inner { background: #085041; border-radius: 16px; padding: 2.5rem 2rem; text-align: center; }
-.bridge-inner .eyebrow { font-size: 12px; color: #9FE1CB; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
-.bridge-inner h2 { font-size: 25px; font-weight: 500; color: #E1F5EE; margin-bottom: 1rem; line-height: 1.3; }
-.bridge-inner p { font-size: 16.5px; color: #c5e8dc; line-height: 1.75; max-width: 540px; margin: 0 auto 1rem; }
+.bridge-inner { background: var(--sage); border-radius: var(--radius-lg); padding: 2.5rem 2rem; text-align: center; }
+.bridge-inner .eyebrow { font-size: 12px; color: var(--sage-soft); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.bridge-inner h2 { font-size: 25px; font-weight: 500; color: #fff; margin-bottom: 1rem; line-height: 1.3; }
+.bridge-inner p { font-size: 16.5px; color: rgba(255,255,255,0.85); line-height: 1.75; max-width: 540px; margin: 0 auto 1rem; }
 .bridge-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem; }
-.btn-white { background: white; color: #085041; padding: 14px 30px; border-radius: 8px; font-size: 16px; font-weight: 500; text-decoration: none; }
-.btn-ghost { background: transparent; color: #E1F5EE; border: 1.5px solid #5DCAA5; padding: 12.5px 26px; border-radius: 8px; font-size: 16px; font-weight: 500; text-decoration: none; }
-.refs { max-width: 720px; margin: 2rem auto 0; padding: 2rem; border-top: 1px solid #e8e6e0; }
+.btn-white { background: white; color: var(--sage); padding: 14px 30px; border-radius: 999px; font-size: 16px; font-weight: 500; text-decoration: none; }
+.btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); padding: 12.5px 26px; border-radius: 999px; font-size: 16px; font-weight: 500; text-decoration: none; }
+.refs { max-width: 720px; margin: 2rem auto 0; padding: 2rem; border-top: 1px solid var(--line); }
 .refs h2 { font-size: 16px; font-weight: 500; margin-bottom: 1rem; }
 .refs ol { margin: 0 0 0 1.2rem; }
-.refs li { font-size: 13px; color: #777; line-height: 1.6; margin-bottom: 0.6rem; }
-.refs a { color: #0F6E56; text-decoration: none; word-break: break-word; }
+.refs li { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 0.6rem; }
+.refs a { color: var(--sage); text-decoration: none; word-break: break-word; }
 .disclaimer { max-width: 720px; margin: 0 auto; padding: 0 2rem 2rem; }
-.disclaimer p { font-size: 13px; color: #999; font-style: italic; line-height: 1.6; }
+.disclaimer p { font-size: 13px; color: var(--muted); font-style: italic; line-height: 1.6; }
 @media (max-width: 600px) { .hero h1 { font-size: 27px; } }
-
-/* === NAV === */
-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid #e8e6e0; background: white; position: sticky; top: 0; z-index: 50; }
-.nav-logo { font-size: 18px; font-weight: 500; color: #085041; text-decoration: none; }
-.nav-links { display: flex; gap: 22px; align-items: center; }
-.nav-links > a { font-size: 14px; color: #555; text-decoration: none; }
-.nav-links > a:hover { color: #085041; }
-.nav-links > a.current { color: #085041; font-weight: 500; }
-.nav-dd { position: relative; display: flex; align-items: center; }
-.nav-dd > a.dd-trigger { font-size: 14px; color: #555; text-decoration: none; display: flex; align-items: center; gap: 4px; cursor: pointer; }
-.nav-dd > a.dd-trigger:hover,
-.nav-dd > a.dd-trigger.current { color: #085041; font-weight: 500; }
-/* Invisible bridge fills the gap so mouse doesn't lose hover */
-.nav-dd-menu {
-  position: absolute; top: 100%; right: 0;
-  padding-top: 10px; /* bridge — mouse travels over this invisible space */
-  display: none; flex-direction: column;
-}
-.nav-dd-menu-inner {
-  background: white; border: 1px solid #e8e6e0; border-radius: 10px;
-  padding: 6px; min-width: 250px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  display: flex; flex-direction: column;
-}
-.nav-dd:hover .nav-dd-menu { display: flex; }
-.nav-dd-menu a { padding: 9px 12px; border-radius: 7px; font-size: 14px; color: #444; text-decoration: none; display: block; }
-.nav-dd-menu a:hover { background: #E1F5EE; color: #085041; }
-.nav-dd-menu a.current { color: #085041; font-weight: 500; }
-.nav-dd-menu .dd-sep { border-top: 1px solid #f0eee8; margin: 5px 4px; }
-.nav-cta { background: #1D9E75; color: white; padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap; }
-.nav-cta:hover { background: #0F6E56; color: white; }
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-.nav-toggle span { display: block; width: 22px; height: 2px; background: #085041; margin: 4px 0; border-radius: 2px; transition: 0.2s; }
-.mobile-menu { display: none; flex-direction: column; background: white; border-bottom: 1px solid #e8e6e0; padding: 0.5rem 2rem 1.25rem; position: sticky; top: 61px; z-index: 49; }
-.mobile-menu > a { padding: 11px 0; font-size: 15px; color: #444; text-decoration: none; border-bottom: 1px solid #f0eee8; display: block; }
-.mobile-menu > a.current { color: #085041; font-weight: 500; }
-.mobile-menu .mm-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #aaa; padding: 14px 0 4px; }
-.mobile-menu.open { display: flex; }
-@media (max-width: 860px) { .nav-links { display: none; } .nav-toggle { display: block; } }
-/* === END NAV === */
-
 </style>
 </head>
 <body>
 
+<div class="nav-outer">
 <nav>
   <a href="index.html" class="nav-logo">A Chapter Together</a>
   <div class="nav-links">
-    <a href="index.html">Reading sessions</a>
-    <a href="meditation-coaching.html">Meditation coaching</a>
-    <a href="companionship.html">Companionship</a>
+    <a href="index.html">Companionship</a>
+    <a href="reading-sessions.html">Reading sessions</a>
     <a href="grief-support.html">Grief support</a>
+    <a href="meditation-coaching.html">Meditation</a>
     <div class="nav-dd">
-      <a href="resources.html" class="dd-trigger current">Resources ▾</a>
-      <div class="nav-dd-menu"><div class="nav-dd-menu-inner">
-        <a href="resources.html">Senior guides &amp; resources</a>
-        <a href="meditation-resources.html">Meditation guides</a>
+      <a href="resources.html" class="dd-trigger">Resources &#9662;</a>
+      <div class="nav-dd-menu"><div class="nav-dd-inner">
+        <a href="how-to-help-lonely-parent.html">How to help a lonely parent</a>
+        <a href="signs-of-loneliness-elderly-parents.html">Signs of loneliness</a>
+        <a href="what-to-talk-about-with-elderly-parent.html">What to talk about</a>
+        <a href="activities-for-seniors-who-live-alone.html">Activities for seniors alone</a>
+        <a href="senior-loneliness.html">Senior loneliness (research)</a>
+        <a href="resources.html">All resources &rarr;</a>
       </div></div>
     </div>
-    <a href="index.html" class="nav-cta">Book free session</a>
+    <a href="index.html#book" class="nav-cta">Book free session</a>
   </div>
   <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
-    <span></span><span></span><span></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Reading sessions</a>
-  <a href="meditation-coaching.html">Meditation coaching</a>
-  <a href="companionship.html">Companionship</a>
+  <a href="index.html">Companionship</a>
+  <a href="reading-sessions.html">Reading sessions</a>
   <a href="grief-support.html">Grief support</a>
-    <div class="mm-label">Resources</div>
-  <a href="resources.html">Senior guides &amp; resources</a>
-  <a href="meditation-resources.html">Meditation guides</a>
-
-  <a href="index.html" style="color:#0F6E56; font-weight:500;">Book a free session →</a>
+  <a href="meditation-coaching.html">Meditation</a>
+  <a href="resources.html">Resources</a>
+  <a href="index.html#book" class="nav-cta">Book free session</a>
+</div>
 </div>
 
-<div class="hero">
+<section class="hero" style="padding:3.5rem 0; text-align:center;">
+<div class="wrap">
   <div class="hero-tag">Understanding senior loneliness</div>
   <h1>Senior loneliness: what the research says</h1>
   <p class="deck">It used to be treated as a private feeling. It's now measured as a health risk on par with smoking. Here's what the research says about why older adults are especially vulnerable — and what genuinely helps.</p>
   <p class="byline">A Chapter Together · Researched and written 2026 · 10-minute read</p>
 </div>
+</section>
+
+<section style="padding:0;">
+<div class="wrap-narrow">
 
 <article class="article">
   <p class="intro-p">For most of the last century, loneliness was treated as a private matter — something to be endured quietly, perhaps confided to a close friend, but rarely spoken of as a concern for doctors or governments. That has changed. In 2023 the U.S. Surgeon General issued a formal advisory describing loneliness and isolation as an epidemic<sup class="ref"><a href="#r1">1</a></sup>, and in 2025 the World Health Organization published its first global report on the subject, placing social disconnection alongside tobacco and air pollution as a serious threat to public health<sup class="ref"><a href="#r2">2</a></sup>. The shift matters most for older adults, who carry more of this burden than almost any other group — and who are often the least likely to name it out loud.</p>
@@ -268,26 +222,32 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
       <p>Within that frame, several approaches have supporting evidence, though the quality varies: befriending and "friendly visiting" schemes, social prescribing — where a clinician refers a patient to non-medical community support — and structured psychological approaches such as cognitive behavioural therapy adapted for loneliness<sup class="ref"><a href="#r6">6</a></sup>.</p>
       <p>Encouragingly, the contact does not have to happen in person. Studies of weekly telephone and video "befriending," including intergenerational pairings that connect older adults with students, have reduced isolation for both people in the pair<sup class="ref"><a href="#r7">7</a></sup>. What seems to matter is not the medium but whether someone shows up, remembers, and genuinely wants to be there.</p>
   </section>
-
 </div>
 
-<div class="bridge">
-  <div class="bridge-inner">
-    <div class="eyebrow">A note on what we do</div>
+</div>
+</section>
+
+<section style="padding:2.5rem 0 1rem;">
+<div class="wrap">
+  <div class="price-band">
+    <div class="chapter-mark">A note on what we do</div>
     <h2>Where A Chapter Together fits</h2>
     <p>We're not a clinical service, and we won't pretend a weekly call cures something the research describes as this stubborn. But the features the evidence keeps pointing to — one-to-one, consistent, reciprocal, and built around something a person enjoys — happen to describe exactly what we try to offer.</p>
     <p>A real person reads a good book with you over video each week, remembers where you left off, and looks forward to hearing what you think. If that sounds useful, the first session is free.</p>
-    <div class="bridge-actions">
-      <a class="btn-white" href="index.html">Book a free session</a>
-      <a class="btn-ghost" href="overcoming-loneliness.html">10 practical steps to try →</a>
+    <div class="bridge-actions" style="margin-top:1.5rem;">
+      <a class="btn btn-primary" href="index.html" style="background:#fff; color:var(--sage);">Book a free session</a>
+      <a class="btn btn-secondary" href="overcoming-loneliness.html" style="color:#fff; border-color:rgba(255,255,255,0.4);">10 practical steps to try &rarr;</a>
     </div>
   </div>
 </div>
+</section>
+
+<section style="padding:0;">
+<div class="wrap-narrow">
 
 <div class="refs">
   <h2>References</h2>
   <ol>
-<ol>
       <li id="r1">Office of the U.S. Surgeon General. <em>Our Epidemic of Loneliness and Isolation</em> (2023). <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/connection/index.html">hhs.gov/surgeongeneral</a></li>
       <li id="r2">World Health Organization, Commission on Social Connection. <em>From Loneliness to Social Connection</em> (2025). <a href="https://www.who.int/news/item/30-06-2025-social-connection-linked-to-improved-heath-and-reduced-risk-of-early-death">who.int</a></li>
       <li id="r3">University of Michigan Institute for Healthcare Policy &amp; Innovation, National Poll on Healthy Aging, published in <em>JAMA</em> (2024). <a href="https://ihpi.umich.edu/news-events/news/loneliness-and-isolation-back-pre-pandemic-levels-still-high-older-adults">ihpi.umich.edu</a></li>
@@ -296,7 +256,6 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
       <li id="r6">Interventions for loneliness in older adults: a systematic review of reviews. <em>Frontiers in Public Health</em> (2024). <a href="https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2024.1427605/full">frontiersin.org</a></li>
       <li id="r7">Contactless intergenerational befriending and social isolation among older adults. <em>JMIR / NCBI</em> (2024). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10865196/">ncbi.nlm.nih.gov</a></li>
       <li id="r9">Harvard Graduate School of Education, Making Caring Common project (2024). <a href="https://www.gse.harvard.edu/ideas/usable-knowledge/24/10/what-causing-our-epidemic-loneliness-and-how-can-we-fix-it">gse.harvard.edu</a></li>
-    </ol>
   </ol>
 </div>
 
@@ -304,23 +263,44 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
   <p>This article is for general information and isn't medical advice. Loneliness can affect mental and physical health; if you or someone you care about is struggling, speaking with a doctor is a good step.</p>
 </div>
 
-<footer>
-  <div class="footer-links">
-    <a href="index.html">Reading sessions</a>
-    <a href="meditation-coaching.html">Meditation coaching</a>
-    <a href="companionship.html">Companionship</a>
-    <a href="grief-support.html">Grief support</a>
-    <a href="resources.html">Resources</a>
-  </div>
-  <p>© 2026 A Chapter Together · <a href="mailto:harlanmoore@gmail.com">harlanmoore@gmail.com</a> · <a href="https://wa.me/14252691221" target="_blank" rel="noopener">WhatsApp +1 (425) 269-1221</a></p>
-</footer>
+</div>
+</section>
 
-<a href="https://wa.me/14252691221" target="_blank" rel="noopener" title="Chat on WhatsApp"
-style="position:fixed; bottom:24px; right:24px; z-index:999; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(0,0,0,0.2);">
-<svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-</svg>
-</a>
+<footer>
+  <div class="wrap">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">A Chapter Together</a>
+      <p>Weekly one-on-one video visits with warm, screened companions — for parents who deserve someone to talk to.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="index.html">Companionship</a>
+      <a href="reading-sessions.html">Reading sessions</a>
+      <a href="grief-support.html">Grief support</a>
+      <a href="meditation-coaching.html">Meditation</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="how-to-help-lonely-parent.html">Help a lonely parent</a>
+      <a href="signs-of-loneliness-elderly-parents.html">Signs of loneliness</a>
+      <a href="senior-loneliness.html">Loneliness research</a>
+      <a href="resources.html">All guides</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="index.html#book">Book a session</a>
+      <a href="mailto:hello@achaptertogether.org">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>&copy; 2026 A Chapter Together. Made with care.</span>
+      <span>hello@achaptertogether.org</span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

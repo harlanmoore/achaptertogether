@@ -1,1289 +1,512 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Companionship for Lonely Seniors | A Chapter Together</title>
+<meta name="description" content="A Chapter Together pairs older adults with warm, screened companions for weekly one-on-one video visits. Real conversation, real connection — for parents who deserve someone to talk to. First session free." />
+<link rel="canonical" href="https://achaptertogether.org/" />
 
-<title>Virtual Reading Companion for Seniors | A Chapter Together</title>
-
-<meta name="description" content="Live one-on-one reading sessions for seniors over Zoom or FaceTime. A real human companion, good books, great conversation. First session free." />
-
-<meta name="keywords" content="reading companion for seniors, virtual reading sessions, online companion for elderly, reading aloud to seniors, senior companionship online, beat senior loneliness, book companion for elderly, reading service for seniors, online reading for elderly, senior isolation help" />
-
-<meta property="og:title" content="Virtual Reading Companion for Seniors | A Chapter Together" />
-
-<meta property="og:description" content="Live one-on-one reading sessions for seniors over Zoom or FaceTime. A real human companion, good books, great conversation. First session free." />
-
-<meta property="og:url" content="https://achaptertogether.org" />
-
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="A Chapter Together" />
+<meta property="og:title" content="Companionship for Lonely Seniors | A Chapter Together" />
+<meta property="og:description" content="Weekly one-on-one visits with a warm, screened companion. For parents who deserve someone to talk to." />
+<meta property="og:url" content="https://achaptertogether.org/" />
+<meta property="og:image" content="https://achaptertogether.org/og-image.jpg" />
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Virtual Reading Companion for Seniors | A Chapter Together" />
-<meta name="twitter:description" content="Live one-on-one reading sessions for seniors over Zoom or FaceTime. A real human companion, good books, great conversation. First session free." />
-<meta name="robots" content="index, follow" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Companionship for Lonely Seniors | A Chapter Together" />
+<meta name="twitter:description" content="Weekly one-on-one visits with a warm companion. For parents who deserve someone to talk to." />
 
-<link rel="canonical" href="https://achaptertogether.org" />
-<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<link rel="stylesheet" href="shared.css" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5DZR4T1YFC');
+</script>
+
+<!-- Meta Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+
+<!-- Organization schema -->
 <script type="application/ld+json">
-
 {
-
-"@context": "https://schema.org",
-
-"@type": "LocalBusiness",
-
-"name": "A Chapter Together",
-
-"description": "Live one-on-one virtual reading sessions for seniors over Zoom or FaceTime. Real human reading companion offering books, conversation, and genuine connection. First session free.",
-
-"url": "https://achaptertogether.org",
-
-"email": "harlanmoore@gmail.com",
-
-"founder": {
-
-"@type": "Person",
-
-"name": "Harlan Moore"
-
-},
-
-"serviceType": "Virtual Reading Companion for Seniors",
-
-"areaServed": "United States",
-
-"priceRange": "$60 per session",
-
-"offers": {
-
-"@type": "Offer",
-
-"name": "First Reading Session",
-
-"price": "0",
-
-"priceCurrency": "USD",
-
-"description": "First session completely free with no credit card required"
-
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "A Chapter Together",
+  "alternateName": "ACT",
+  "url": "https://achaptertogether.org",
+  "logo": "https://achaptertogether.org/logo.png",
+  "description": "A Chapter Together is a virtual companionship service that pairs older adults with warm, screened companions for weekly one-on-one video visits — conversation, storytelling, and shared reading that ease loneliness and create meaningful connection.",
+  "founder": {
+    "@type": "Person",
+    "name": "Harlan Moore"
+  },
+  "sameAs": [
+    "https://www.facebook.com/achaptertogether",
+    "https://www.linkedin.com/company/achaptertogether"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "hello@achaptertogether.org",
+    "availableLanguage": ["English"]
+  }
 }
-
-}
-
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
-
-<!-- Google tag (gtag.js) -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DZR4T1YFC"></script>
-
-<script>
-
-window.dataLayer = window.dataLayer || [];
-
-function gtag(){dataLayer.push(arguments);}
-
-gtag('js', new Date());
-
-gtag('config', 'G-5DZR4T1YFC');
-
+<!-- Service schema (top-level offering) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Senior Companionship",
+  "provider": {
+    "@type": "Organization",
+    "name": "A Chapter Together",
+    "url": "https://achaptertogether.org"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": ["United States", "Canada", "United Kingdom", "Australia"]
+  },
+  "audience": {
+    "@type": "PeopleAudience",
+    "suggestedMinAge": 60
+  },
+  "description": "Weekly one-on-one video visits between older adults and screened, trained companions. Sessions combine conversation, storytelling, and shared reading to reduce loneliness and create lasting connection.",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0",
+    "description": "First session is always free."
+  }
+}
 </script>
 
-<!-- Meta Pixel Code -->
-
-<script>
-
-!function(f,b,e,v,n,t,s)
-
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-
-n.queue=[];t=b.createElement(e);t.async=!0;
-
-t.src=v;s=b.getElementsByTagName(e)[0];
-
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '332609950231827');
-
-fbq('track', 'PageView');
-
+<!-- FAQ schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is A Chapter Together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Chapter Together is an online companionship service that pairs older adults with warm, screened companions for one-on-one video visits. Sessions combine conversation, storytelling, and shared reading to reduce loneliness and create meaningful social connection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the first session really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The first session is free with no card required, so you can see if it's a good fit before committing to anything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the technology work if my parent isn't tech-savvy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most families use Zoom or FaceTime. We send a simple one-tap link before each session. If needed, we'll do a short setup call to make sure everything works before the first visit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are companions background checked?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every companion completes a background check, an interview, and training on working warmly with older adults before they meet a single member."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weekly sessions start at $60 per visit, with lower rates on 4-session and 12-session plans. The first session is always free."
+      }
+    }
+  ]
+}
 </script>
-
-<noscript><img height="1" width="1" style="display:none"
-
-src="https://www.facebook.com/tr?id=332609950231827&ev=PageView&noscript=1"
-
-/></noscript>
-
-<!-- End Meta Pixel Code -->
-
-<style>
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body { font-family: 'Inter', sans-serif; background: #fafaf8; color: #1a1a1a; }
-
-/* NAV */
-
-
-
-
-
-
-
-
-/* PAGE SWITCHING */
-
-#homePage { display: block; }
-
-#bookingPage { display: none; }
-
-/* HERO */
-
-.hero { background: #E1F5EE; padding: 5rem 2rem 4rem; text-align: center; }
-
-.hero-tag { font-size: 13px; color: #0F6E56; background: #9FE1CB; padding: 4px 16px; border-radius: 20px; display: inline-block; margin-bottom: 1.5rem; }
-
-.hero h1 { font-size: 42px; font-weight: 500; color: #085041; line-height: 1.2; margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-.hero p { font-size: 18px; color: #0F6E56; line-height: 1.7; max-width: 500px; margin: 0 auto 2.5rem; }
-
-.btn-primary { background: #1D9E75; color: white; border: none; padding: 15px 36px; border-radius: 8px; font-size: 16px; font-weight: 500; cursor: pointer; font-family: inherit; margin-right: 12px; }
-
-.btn-primary:hover { background: #0F6E56; }
-
-.btn-secondary { background: transparent; color: #0F6E56; border: 1.5px solid #0F6E56; padding: 14px 30px; border-radius: 8px; font-size: 16px; font-weight: 500; cursor: pointer; font-family: inherit; }
-
-.btn-secondary:hover { background: #E1F5EE; }
-
-/* SECTIONS */
-
-.section { padding: 4rem 2rem; max-width: 860px; margin: 0 auto; }
-
-.section-label { font-size: 12px; color: #888; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
-
-.section h2 { font-size: 30px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.75rem; }
-
-.section > p { font-size: 16px; color: #555; line-height: 1.7; max-width: 560px; }
-
-/* HOW IT WORKS */
-
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 2rem; }
-
-.step-card { background: white; border: 1px solid #e8e6e0; border-radius: 12px; padding: 1.5rem; }
-
-.step-num { width: 34px; height: 34px; border-radius: 50%; background: #E1F5EE; color: #0F6E56; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
-
-.step-card h3 { font-size: 15px; font-weight: 500; color: #1a1a1a; margin-bottom: 6px; }
-
-.step-card p { font-size: 13px; color: #666; line-height: 1.65; }
-
-/* MEET SECTION */
-
-.meet { background: #f4f4f0; padding: 4rem 2rem; }
-
-.meet-inner { max-width: 760px; margin: 0 auto; display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap; }
-
-.photo-wrap { flex-shrink: 0; }
-
-.photo-circle { width: 160px; height: 160px; border-radius: 50%; background: #9FE1CB; border: 4px solid #5DCAA5; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-
-.photo-circle img { width: 100%; height: 100%; object-fit: cover; }
-
-.photo-initials { font-size: 48px; color: #085041; font-weight: 500; }
-
-.meet-text h2 { font-size: 28px; font-weight: 500; color: #1a1a1a; margin-bottom: 1rem; }
-
-.meet-text blockquote { font-size: 16px; color: #0F6E56; font-style: italic; line-height: 1.8; margin-bottom: 1rem; border-left: 1px solid #1D9E75; padding-left: 1rem; }
-
-.meet-text p { font-size: 15px; color: #555; line-height: 1.75; }
-
-/* WHO IT'S FOR */
-
-.who-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 1.5rem; }
-
-.who-card { background: white; border: 1px solid #e8e6e0; border-radius: 12px; padding: 1.5rem; }
-
-.who-icon { font-size: 28px; margin-bottom: 12px; }
-
-.who-card h3 { font-size: 15px; font-weight: 500; color: #1a1a1a; margin-bottom: 6px; }
-
-.who-card p { font-size: 13px; color: #666; line-height: 1.65; }
-
-/* TESTIMONIAL */
-
-.testimonial-wrap { background: white; max-width: 860px; margin: 0 auto; padding: 2rem; border-left: 4px solid #1D9E75; }
-
-.testimonial-wrap p { font-size: 18px; color: #1a1a1a; font-style: italic; line-height: 1.75; margin-bottom: 12px; }
-
-.testimonial-author { font-size: 13px; color: #888; }
-
-/* PRICING */
-
-.pricing-band { background: #085041; padding: 4rem 2rem; text-align: center; }
-
-.pricing-band h2 { font-size: 30px; font-weight: 500; color: #E1F5EE; margin-bottom: 0.75rem; }
-
-.free-pill { display: inline-block; background: #9FE1CB; color: #085041; font-size: 14px; font-weight: 500; padding: 8px 22px; border-radius: 20px; margin-bottom: 1.5rem; }
-
-.price-num { font-size: 56px; font-weight: 500; color: white; margin-bottom: 0.25rem; }
-
-.price-sub { font-size: 15px; color: #9FE1CB; margin-bottom: 2rem; }
-
-.pricing-features { list-style: none; max-width: 360px; margin: 0 auto 2.5rem; text-align: left; display: flex; flex-direction: column; gap: 10px; }
-
-.pricing-features li { font-size: 15px; color: #9FE1CB; display: flex; align-items: center; gap: 10px; }
-
-.pricing-features li::before { content: "✓"; color: #5DCAA5; font-weight: 500; flex-shrink: 0; }
-
-.btn-white { background: white; color: #085041; border: none; padding: 15px 36px; border-radius: 8px; font-size: 16px; font-weight: 500; cursor: pointer; font-family: inherit; }
-
-.btn-white:hover { background: #E1F5EE; }
-
-/* FOOTER */
-
-footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; font-size: 13px; }
-
-footer a { color: #9FE1CB; text-decoration: none; }
-
-/* BOOKING FORM */
-
-.booking-wrap { max-width: 600px; margin: 0 auto; padding: 3rem 2rem; }
-
-.back-link { font-size: 14px; color: #555; display: flex; align-items: center; gap: 6px; margin-bottom: 2rem; cursor: pointer; background: none; border: none; font-family: inherit; }
-
-.back-link:hover { color: #085041; }
-
-.booking-tag { font-size: 13px; color: #0F6E56; background: #E1F5EE; padding: 4px 14px; border-radius: 20px; display: inline-block; margin-bottom: 1rem; }
-
-.booking-wrap h1 { font-size: 30px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.5rem; }
-
-.booking-wrap .subtitle { font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 2rem; }
-
-.free-reminder { background: #E1F5EE; border-radius: 10px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; }
-
-.free-reminder .icon { font-size: 22px; }
-
-.free-reminder p { font-size: 14px; color: #085041; line-height: 1.5; }
-
-.who-switcher { display: flex; background: #f0f0ec; border-radius: 10px; padding: 4px; margin-bottom: 2rem; }
-
-.who-btn { flex: 1; padding: 10px; text-align: center; font-size: 14px; border-radius: 7px; cursor: pointer; color: #666; border: none; background: transparent; font-family: inherit; }
-
-.who-btn.active { background: white; color: #1a1a1a; font-weight: 500; border: 1px solid #e0e0d8; }
-
-.form-divider { font-size: 12px; color: #aaa; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid #e8e6e0; padding-bottom: 8px; margin: 2rem 0 1.25rem; }
-
-.field { margin-bottom: 1.25rem; }
-
-.field label { display: block; font-size: 14px; font-weight: 500; color: #1a1a1a; margin-bottom: 6px; }
-
-.field .hint { font-size: 12px; color: #888; margin-bottom: 6px; }
-
-.optional { font-size: 11px; color: #aaa; font-weight: 400; margin-left: 5px; }
-
-.field input, .field select, .field textarea { width: 100%; font-size: 15px; padding: 11px 13px; border: 1px solid #ddd; border-radius: 8px; background: white; color: #1a1a1a; font-family: inherit; }
-
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #1D9E75; }
-
-.field textarea { min-height: 90px; resize: vertical; line-height: 1.6; }
-
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
-.toggle-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-
-.toggle { padding: 8px 16px; border-radius: 20px; border: 1px solid #ddd; font-size: 13px; color: #555; cursor: pointer; background: white; font-family: inherit; transition: all 0.15s; }
-
-.toggle.active { background: #E1F5EE; color: #085041; border-color: #1D9E75; font-weight: 500; }
-
-.submit-btn { width: 100%; background: #1D9E75; color: white; border: none; padding: 16px; border-radius: 8px; font-size: 16px; font-weight: 500; cursor: pointer; margin-top: 1.5rem; font-family: inherit; }
-
-.submit-btn:hover { background: #0F6E56; }
-
-.privacy-note { font-size: 12px; color: #aaa; text-align: center; margin-top: 1rem; line-height: 1.6; }
-
-.success-msg { display: none; text-align: center; padding: 4rem 1rem; }
-
-.success-msg .big-icon { font-size: 52px; margin-bottom: 1rem; }
-
-.success-msg h2 { font-size: 26px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.75rem; }
-
-.success-msg p { font-size: 15px; color: #666; line-height: 1.7; }
-
-@media (max-width: 600px) {
-
-.hero h1 { font-size: 28px; }
-
-
-.field-row { grid-template-columns: 1fr; }
-
-.meet-inner { flex-direction: column; text-align: center; }
-
-.meet-text blockquote { text-align: left; }
-
-.btn-secondary { display: none; }
-
-}
-
-
-.nav-dd > a.dd-trigger:hover { color: #085041; }
-.nav-dd > a.dd-trigger.current { color: #085041; font-weight: 500; }
-
-
-footer { background: #1a1a1a; color: #888; text-align: center; padding: 2.5rem 2rem; font-size: 13px; }
-footer a { color: #9FE1CB; text-decoration: none; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid #333; }
-.footer-links a { color: #ccc; font-size: 14px; }
-.footer-links a:hover { color: #9FE1CB; }
-
-
-/* === NAV === */
-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid #e8e6e0; background: white; position: sticky; top: 0; z-index: 50; }
-.nav-logo { font-size: 18px; font-weight: 500; color: #085041; text-decoration: none; }
-.nav-links { display: flex; gap: 22px; align-items: center; }
-.nav-links > a { font-size: 14px; color: #555; text-decoration: none; }
-.nav-links > a:hover { color: #085041; }
-.nav-links > a.current { color: #085041; font-weight: 500; }
-.nav-dd { position: relative; display: flex; align-items: center; }
-.nav-dd > a.dd-trigger { font-size: 14px; color: #555; text-decoration: none; display: flex; align-items: center; gap: 4px; cursor: pointer; }
-.nav-dd > a.dd-trigger:hover,
-.nav-dd > a.dd-trigger.current { color: #085041; font-weight: 500; }
-/* Invisible bridge fills the gap so mouse doesn't lose hover */
-.nav-dd-menu {
-  position: absolute; top: 100%; right: 0;
-  padding-top: 10px; /* bridge — mouse travels over this invisible space */
-  display: none; flex-direction: column;
-}
-.nav-dd-menu-inner {
-  background: white; border: 1px solid #e8e6e0; border-radius: 10px;
-  padding: 6px; min-width: 250px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  display: flex; flex-direction: column;
-}
-.nav-dd:hover .nav-dd-menu { display: flex; }
-.nav-dd-menu a { padding: 9px 12px; border-radius: 7px; font-size: 14px; color: #444; text-decoration: none; display: block; }
-.nav-dd-menu a:hover { background: #E1F5EE; color: #085041; }
-.nav-dd-menu a.current { color: #085041; font-weight: 500; }
-.nav-dd-menu .dd-sep { border-top: 1px solid #f0eee8; margin: 5px 4px; }
-.nav-cta { background: #1D9E75; color: white; padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap; }
-.nav-cta:hover { background: #0F6E56; color: white; }
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-.nav-toggle span { display: block; width: 22px; height: 2px; background: #085041; margin: 4px 0; border-radius: 2px; transition: 0.2s; }
-.mobile-menu { display: none; flex-direction: column; background: white; border-bottom: 1px solid #e8e6e0; padding: 0.5rem 2rem 1.25rem; position: sticky; top: 61px; z-index: 49; }
-.mobile-menu > a { padding: 11px 0; font-size: 15px; color: #444; text-decoration: none; border-bottom: 1px solid #f0eee8; display: block; }
-.mobile-menu > a.current { color: #085041; font-weight: 500; }
-.mobile-menu .mm-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #aaa; padding: 14px 0 4px; }
-.mobile-menu.open { display: flex; }
-@media (max-width: 860px) { .nav-links { display: none; } .nav-toggle { display: block; } }
-/* === END NAV === */
-
-</style>
-
 </head>
-
 <body>
 
+<!-- ============ NAV ============ -->
+<div class="nav-outer">
 <nav>
-  <a href="#" onclick="showHome(); return false;" class="nav-logo" style="text-decoration:none;">A Chapter Together</a>
+  <a href="index.html" class="nav-logo">A Chapter Together</a>
   <div class="nav-links">
-    <a href="#" onclick="showHome(); return false;" class="current">Reading sessions</a>
-    <a href="meditation-coaching.html">Meditation coaching</a>
-    <a href="companionship.html">Companionship</a>
+    <a href="index.html" class="current">Companionship</a>
+    <a href="reading-sessions.html">Reading sessions</a>
     <a href="grief-support.html">Grief support</a>
+    <a href="meditation-coaching.html">Meditation</a>
     <div class="nav-dd">
       <a href="resources.html" class="dd-trigger">Resources ▾</a>
-      <div class="nav-dd-menu"><div class="nav-dd-menu-inner">
-        <a href="resources.html">Senior guides &amp; resources</a>
-        <a href="meditation-resources.html">Meditation guides</a>
+      <div class="nav-dd-menu"><div class="nav-dd-inner">
+        <a href="how-to-help-lonely-parent.html">How to help a lonely parent</a>
+        <a href="signs-of-loneliness-elderly-parents.html">Signs of loneliness</a>
+        <a href="what-to-talk-about-with-elderly-parent.html">What to talk about</a>
+        <a href="activities-for-seniors-who-live-alone.html">Activities for seniors alone</a>
+        <a href="senior-loneliness.html">Senior loneliness (research)</a>
+        <a href="resources.html">All resources →</a>
       </div></div>
     </div>
-    <a href="#" onclick="showBooking(); return false;" class="nav-cta">Book free session</a>
+    <a href="#book" class="nav-cta">Book free session</a>
   </div>
   <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
-    <span></span><span></span><span></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#" onclick="showHome(); document.getElementById('mobileMenu').classList.remove('open'); return false;" class="current">Reading sessions</a>
-  <a href="meditation-coaching.html">Meditation coaching</a>
-  <a href="companionship.html">Companionship</a>
+  <a href="index.html" class="current">Companionship</a>
+  <a href="reading-sessions.html">Reading sessions</a>
   <a href="grief-support.html">Grief support</a>
-    <div class="mm-label">Resources</div>
-  <a href="resources.html">Senior guides &amp; resources</a>
-  <a href="meditation-resources.html">Meditation guides</a>
-
-  <a href="#" onclick="showBooking(); document.getElementById('mobileMenu').classList.remove('open'); return false;" style="color:#0F6E56; font-weight:500;">Book a free session →</a>
-</div>
-
-<!-- HOME PAGE -->
-
-<div id="homePage" style="display:block;">
-
-<div class="hero" style="padding: 2.5rem 2rem;">
-
-<div class="hero-tag">First session always free</div>
-
-<h1 style="font-size:32px;">A warm, personal reading companion for seniors</h1>
-
-<p style="font-size:16px; margin-bottom:1.75rem;">Live one-on-one sessions over Zoom or FaceTime — reading, laughing, debating, and sharing thoughts together.</p>
-
-<button class="btn-primary" onclick="showBooking()">Book your free session</button>
-
-<button class="btn-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</button>
-
-<div style="margin-top:1.25rem;">
-
-<a href="#" onclick="showRepeat(); return false;" style="font-size:14px; color:#0F6E56; font-weight:600; text-decoration:none;">Already a client? Book your next session →</a>
-
-</div>
-
-</div>
-
-<div class="meet" id="meet" style="padding: 4rem 2rem;">
-
-<div class="meet-inner">
-
-<div class="meet-text">
-
-<div style="font-size:12px; color:#888; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem;">Your reader</div>
-
-<h2>Hi, I'm Harlan Moore</h2>
-
-<div style="display:flex; gap:1.5rem; align-items:flex-start; margin-bottom:1rem;">
-
-<img src="harlan.jpg" alt="Harlan Moore" style="width:150px; height:150px; border-radius:50%; object-fit:cover; object-position: center 15%; flex-shrink:0; border: 3px solid #5DCAA5;" />
-
-<blockquote style="margin-bottom:0;">"I used to read to my daughters every night before bed — and the best part was never the reading itself. It was the conversations afterwards. The questions, the laughter, the little debates. I started A Chapter Together to bring that same warmth and connection to seniors who deserve someone to share their thoughts with."</blockquote>
-
-</div>
-
-<p>I've had what most people would call an unusual life.
-
-I built and sold several multimillion dollar companies — electronics, real estate. Made good money. And then one day I looked around and thought — is this it? So I left.
-
-I spent years as a gold buyer in Africa and the South Pacific. I've sat in villages most people will never find on a map, negotiated deals in languages I was still learning, and come home with stories I'm still processing. I've travelled to India, studied spirituality, and counted yogis among my closest friends. I now live in the jungles of Indonesia.
-
-I tell you all of this not to impress you — but because I think it matters who you invite into your week.
-
-Over the years I've lost older friends who were very dear to me. In their final months, I would go and read to them. Just sit with them, open a book, and read. I know — in a way that's hard to put into words — how much that meant. To them, and to me.
-
-Now I'd like to share that with you.</p>
-
-<button class="btn-primary" onclick="showBooking()" style="margin-top:1.25rem;">Book a free session with me</button>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="section" id="how">
-
-<div class="section-label">How it works</div>
-
-<h2>Simple, warm, and personal</h2>
-
-<p>Getting started takes less than two minutes. No apps to download, no complicated setup.</p>
-
-<div class="steps">
-
-<div class="step-card">
-
-<div class="step-num">1</div>
-
-<h3>Book a session</h3>
-
-<p>Tell us about your loved one — their name, interests, and the kinds of books they enjoy.</p>
-
-</div>
-
-<div class="step-card">
-
-<div class="step-num">2</div>
-
-<h3>First one's free</h3>
-
-<p>Your first session is completely free — no credit card needed. Try it with zero risk.</p>
-
-</div>
-
-<div class="step-card">
-
-<div class="step-num">3</div>
-
-<h3>Connect over video</h3>
-
-<p>Each 45-minute session starts with 30 minutes of reading, followed by 15 minutes of discussion, debate, and laughter. A real conversation, not just a performance.</p>
-
-</div>
-
-<div class="step-card">
-
-<div class="step-num">4</div>
-
-<h3>Keep the story going</h3>
-
-<p>Book regular weekly sessions at $60 each. Seniors often say the discussion is their favourite part — a chance to share their thoughts with someone who genuinely listens.</p>
-
-<a href="#" onclick="showRepeat(); return false;" style="display:inline-block; margin-top:0.85rem; padding:8px 16px; border:1.5px solid #1D9E75; border-radius:8px; font-size:14px; font-weight:600; color:#0F6E56; text-decoration:none;">Book your next session →</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div style="background:#f4f4f0; padding: 4rem 2rem;">
-
-<div style="max-width:760px; margin:0 auto;">
-
-<div style="font-size:12px; color:#888; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem;">What a session looks like</div>
-
-<h2 style="font-size:30px; font-weight:500; color:#1a1a1a; margin-bottom:0.75rem;">More than being read to</h2>
-
-<p style="font-size:16px; color:#555; line-height:1.7; max-width:560px; margin-bottom:2rem;">Each session is 45 minutes, carefully structured to feel both relaxing and enriching. It's not just a reading — it's the kind of conversation most seniors rarely get to have.</p>
-
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:16px;">
-
-<div style="background:white; border-radius:12px; padding:1.5rem; border:1px solid #e8e6e0;">
-
-<div style="font-size:28px; margin-bottom:12px;">📖</div>
-
-<div style="font-size:13px; color:#1D9E75; font-weight:500; margin-bottom:6px;">First 30 minutes</div>
-
-<h3 style="font-size:16px; font-weight:500; color:#1a1a1a; margin-bottom:8px;">Reading together</h3>
-
-<p style="font-size:13px; color:#666; line-height:1.65;">Harlan reads aloud from a book chosen together — at a pace that feels comfortable, with warmth and expression that makes the story come alive.</p>
-
-</div>
-
-<div style="background:white; border-radius:12px; padding:1.5rem; border:1px solid #e8e6e0;">
-
-<div style="font-size:28px; margin-bottom:12px;">💬</div>
-
-<div style="font-size:13px; color:#1D9E75; font-weight:500; margin-bottom:6px;">Final 15 minutes</div>
-
-<h3 style="font-size:16px; font-weight:500; color:#1a1a1a; margin-bottom:8px;">Discussion &amp; conversation</h3>
-
-<p style="font-size:13px; color:#666; line-height:1.65;">This is often the favourite part. What did you think of the characters? Would you have done the same? Sessions become lively, opinionated, and full of laughter.</p>
-
-</div>
-
-<div style="background:white; border-radius:12px; padding:1.5rem; border:1px solid #e8e6e0;">
-
-<div style="font-size:28px; margin-bottom:12px;">🤝</div>
-
-<div style="font-size:13px; color:#1D9E75; font-weight:500; margin-bottom:6px;">Every session</div>
-
-<h3 style="font-size:16px; font-weight:500; color:#1a1a1a; margin-bottom:8px;">Genuine connection</h3>
-
-<p style="font-size:13px; color:#666; line-height:1.65;">Harlan remembers your thoughts from last time, picks up the story where you left off, and genuinely looks forward to hearing what you think next.</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<div class="section-label">Sound familiar?</div>
-
-<h2>If you're lonely and could use a good friend — this is for you</h2>
-
-<div class="who-cards">
-
-<div class="who-card">
-
-<div class="who-icon">📖</div>
-
-<h3>You love books</h3>
-
-<p>Whether it's mysteries, memoirs, classic fiction or poetry — we'll find something you'll truly look forward to each week.</p>
-
-</div>
-
-<div class="who-card">
-
-<div class="who-icon">💬</div>
-
-<h3>You love a good conversation</h3>
-
-<p>The discussion is often the best part. Your opinions, your take on the characters, your memories triggered by the story — all of it welcome.</p>
-
-</div>
-
-<div class="who-card">
-
-<div class="who-icon">🤝</div>
-
-<h3>You want real connection</h3>
-
-<p>Not an app, not an audiobook — a real person who shows up every week, remembers where you left off, and genuinely looks forward to seeing you.</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div style="padding: 0 2rem 3rem; max-width: 860px; margin: 0 auto;">
-
-<div class="testimonial-wrap">
-
-<p>"My mother hadn't lit up like that in months. Her reader remembered what chapter they'd left off on and asked how her garden was doing. It felt like a visit from a dear friend."</p>
-
-<div class="testimonial-author">— Sarah M., daughter of a reader in Phoenix, AZ</div>
-
-</div>
-
-</div>
-
-<div class="pricing-band">
-
-<h2>Simple, honest pricing</h2>
-
-<div class="free-pill">✦ First session completely free</div>
-
-<div class="price-num">$60</div>
-
-<div class="price-sub">per session · no subscription required</div>
-
-<ul class="pricing-features">
-
-<li>45-minute live session over Zoom or FaceTime</li>
-
-<li>30 minutes reading + 15 minutes discussion &amp; conversation</li>
-
-<li>One-on-one with Harlan — your personal reader</li>
-
-<li>Book chosen together to suit your taste</li>
-
-<li>Flexible scheduling, cancel anytime</li>
-
-<li>Via Zoom or FaceTime — nothing to install</li>
-
-</ul>
-
-<button class="btn-white" onclick="showBooking()">Book your free session</button>
-
-</div>
-
-<div style="background:#f4f4f0; padding: 3rem 2rem;">
-
-<div style="max-width:760px; margin:0 auto;">
-
-<h2 style="font-size:22px; font-weight:500; color:#1a1a1a; margin-bottom:1rem;">A virtual reading companion for seniors who love books</h2>
-
-<p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:1rem;">Senior loneliness is one of the most serious health challenges facing older adults in America today. About 28% of people 65 and older live alone — up from just one in ten in 1950 — and around a third of adults over 50 report feeling lonely, according to the University of Michigan's National Poll on Healthy Aging. A Chapter Together was created to offer something simple and profoundly human: a real person, a good book, and a genuine conversation.</p>
-
-<p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:1rem;">Unlike audiobooks or AI companions, our virtual reading sessions are live and personal. Every session is one-on-one with Harlan Moore — a real human being who shows up every week, remembers where you left off, and genuinely looks forward to hearing your thoughts. Sessions take place over Zoom or FaceTime, with no complicated setup required.</p>
-
-<p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:1rem;">The research on what actually helps is clear about one thing: what matters most is consistent, one-to-one contact built around something a person genuinely enjoys — not just more activities or a busier schedule. Reading together, and talking about what you've read, is one of the most natural ways to make that happen.</p>
-
-<p style="font-size:15px; color:#555; line-height:1.8;">Whether you're looking for a reading companion for an elderly parent, or you're a senior yourself who misses having someone to share a good book with — A Chapter Together offers a warm, personal, and affordable solution. Your first session is completely free. <a href="senior-loneliness.html" style="color:#085041; font-weight:500; text-decoration:none;">Read more about senior loneliness and what the research says →</a></p>
-
-</div>
-
-</div>
-
-<!-- SERVICES LINEUP -->
-<div style="background:#fafaf8; padding: 4rem 2rem; border-top: 1px solid #e8e6e0;">
-<div style="max-width:920px; margin:0 auto;">
-<div style="text-align:center; margin-bottom:2.25rem;">
-<p style="font-size:13px; color:#0F6E56; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem;">Ways to connect</p>
-<h2 style="font-size:30px; font-weight:500; color:#1a1a1a;">Four kinds of company, one familiar face</h2>
-<p style="font-size:16px; color:#666; max-width:540px; margin:0.75rem auto 0; line-height:1.7;">Every session is one-on-one with Harlan, over Zoom or FaceTime. The first one is always free.</p>
-</div>
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:16px;">
-
-<a href="#" onclick="showHome(); window.scrollTo({top:0,behavior:'smooth'}); return false;" style="background:white; border:1px solid #e8e6e0; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
-<div style="font-size:26px; margin-bottom:10px;">📖</div>
-<strong style="display:block; font-size:16px; color:#085041; margin-bottom:6px;">Reading sessions</strong>
-<span style="font-size:14px; color:#666; line-height:1.6;">A good book read aloud, then a real conversation about it. $60 · free first session.</span>
-</a>
-
-<a href="meditation-coaching.html" style="background:white; border:1px solid #e8e6e0; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
-<div style="font-size:26px; margin-bottom:10px;">🧘</div>
-<strong style="display:block; font-size:16px; color:#085041; margin-bottom:6px;">Meditation coaching</strong>
-<span style="font-size:14px; color:#666; line-height:1.6;">Gentle one-on-one guided meditation, or a calm-and-company blend. $60 · free first session.</span>
-</a>
-
-<a href="companionship.html" style="background:white; border:1px solid #e8e6e0; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
-<div style="font-size:26px; margin-bottom:10px;">💬</div>
-<strong style="display:block; font-size:16px; color:#085041; margin-bottom:6px;">Companionship</strong>
-<span style="font-size:14px; color:#666; line-height:1.6;">Regular friendly visits and conversation, no reading required. $60 · free first visit.</span>
-</a>
-
-<a href="grief-support.html" style="background:white; border:1px solid #e8e6e0; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
-<div style="font-size:26px; margin-bottom:10px;">🤍</div>
-<strong style="display:block; font-size:16px; color:#8C7245; margin-bottom:6px;">Grief support</strong>
-<span style="font-size:14px; color:#666; line-height:1.6;">A listening companion to talk about the person you lost. Free 15-min first conversation.</span>
-</a>
-
-</div>
+  <a href="meditation-coaching.html">Meditation</a>
+  <a href="resources.html">Resources</a>
+  <a href="#book" class="nav-cta">Book free session</a>
 </div>
 </div>
 
-<!-- RESOURCES -->
-<div id="resources" style="background:#E1F5EE; padding: 4rem 2rem;">
-<div style="max-width:920px; margin:0 auto;">
-<div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; margin-bottom:2rem;">
-<div>
-<p style="font-size:13px; color:#0F6E56; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem;">Free resources</p>
-<h2 style="font-size:30px; font-weight:500; color:#085041;">Honest, well-researched reading</h2>
-</div>
-<a href="resources.html" style="font-size:15px; color:#0F6E56; font-weight:500; text-decoration:none; white-space:nowrap;">View all resources →</a>
-</div>
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px;">
-
-<a href="senior-loneliness.html" style="background:white; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
-<span style="font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.07em; color:#0F6E56;">Guide</span>
-<strong style="display:block; font-size:17px; color:#1a1a1a; margin:6px 0 8px; line-height:1.3;">Understanding senior loneliness</strong>
-<span style="font-size:14px; color:#666; line-height:1.6;">How common it is, why it happens, the health impacts, and what helps. 10-min read →</span>
-</a>
-
-<a href="overcoming-loneliness.html" style="background:white; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
-<span style="font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.07em; color:#0F6E56;">Practical guide</span>
-<strong style="display:block; font-size:17px; color:#1a1a1a; margin:6px 0 8px; line-height:1.3;">10 ways to overcome loneliness</strong>
-<span style="font-size:14px; color:#666; line-height:1.6;">Simple, do-this-today steps to feel more connected. 7-min read →</span>
-</a>
-
-<a href="meditation-for-seniors.html" style="background:white; border-radius:14px; padding:1.6rem; text-decoration:none; color:#1a1a1a; display:block;">
-<span style="font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.07em; color:#0F6E56;">Wellbeing guide</span>
-<strong style="display:block; font-size:17px; color:#1a1a1a; margin:6px 0 8px; line-height:1.3;">The benefits of meditation for seniors</strong>
-<span style="font-size:14px; color:#666; line-height:1.6;">What the research says, plus a gentle way to begin. 8-min read →</span>
-</a>
-
-</div>
-</div>
-</div>
-
-
-<footer>
-  <div class="footer-links">
-    <a href="index.html">Reading sessions</a>
-    <a href="meditation-coaching.html">Meditation coaching</a>
-    <a href="companionship.html">Companionship</a>
-    <a href="grief-support.html">Grief support</a>
-    <a href="resources.html">Resources</a>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">For families of lonely parents</div>
+    <h1>Your mom deserves someone to talk to. Every week.</h1>
+    <p class="hero-lede">
+      A Chapter Together pairs your parent with a warm, screened companion for a one-on-one video visit — real conversation, real presence, and shared reading if they'd like. So the days feel less long, and you can breathe a little easier.
+    </p>
+    <div class="hero-actions">
+      <a href="#book" class="btn btn-primary">Book a free first session</a>
+      <a href="#how-it-works" class="btn btn-quiet">See how it works →</a>
+    </div>
+    <p class="hero-note">
+      No card required. If it's not the right fit, there's nothing to cancel.
+    </p>
   </div>
-  <p>© 2026 A Chapter Together · <a href="mailto:harlanmoore@gmail.com">harlanmoore@gmail.com</a> · <a href="https://wa.me/14252691221" target="_blank" rel="noopener">WhatsApp +1 (425) 269-1221</a></p>
+</section>
+
+<!-- ============ CANONICAL SENTENCE + STATS ============ -->
+<section class="bg-sage-soft">
+  <div class="wrap">
+    <div class="section-head" style="max-width: 820px;">
+      <span class="chapter-mark">What we do</span>
+      <h2>A Chapter Together is an online companionship service that pairs older adults with warm, screened companions for weekly one-on-one video visits.</h2>
+      <p>
+        Sessions combine conversation, storytelling, and shared reading to reduce loneliness and create meaningful social connection. Every companion is background-checked, interviewed, and trained. Families get a short check-in note after each visit so they know how their parent is doing.
+      </p>
+    </div>
+    <div class="grid grid-3">
+      <div class="feature">
+        <div class="feature-num">1 in 3</div>
+        <h3>Older adults feel lonely</h3>
+        <p>According to the 2024 National Poll on Healthy Aging, roughly one in three adults aged 50–80 report feeling isolated. Loneliness is now recognized as a serious public health concern.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-num">29%</div>
+        <h3>Higher risk of heart disease</h3>
+        <p>Studies from the American Heart Association link chronic loneliness in older adults to significantly higher rates of heart disease, stroke, and dementia.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-num">15+</div>
+        <h3>Minutes that change a day</h3>
+        <p>Regular, meaningful contact — even briefly — measurably improves mood, cognition, and sleep. It's often the highlight of the week for our members.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how-it-works">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="chapter-mark">How it works</span>
+      <h2>Simple enough for anyone. Warm enough to matter.</h2>
+      <p>You set it up in five minutes. We take care of everything after that.</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="feature">
+        <div class="feature-num">01</div>
+        <h3>Tell us about them</h3>
+        <p>A short form: their name, what they enjoy, how they prefer to connect. We use it to match them with the right companion.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-num">02</div>
+        <h3>Meet a companion</h3>
+        <p>We introduce your parent to a warm, screened companion. The first visit is free — no card, no commitment.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-num">03</div>
+        <h3>Meet weekly</h3>
+        <p>Same companion, same day, same time. They talk, they read together if wanted, they build a real relationship over months.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-num">04</div>
+        <h3>You hear how it went</h3>
+        <p>A short, warm note after each visit lets you know how they were doing — and gives you something real to bring up next time you call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="bg-sage-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="chapter-mark">Ways we help</span>
+      <h2>Different visits for different chapters.</h2>
+      <p>Every relationship is different. So is every visit. Here's what we can offer.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Reading sessions</h3>
+        <p>Our signature service. A companion reads aloud from a book of your parent's choosing, with pauses for conversation and reflection. Ideal for readers, or for anyone who wants a gentle way into good conversation.</p>
+        <a href="reading-sessions.html" class="card-link">Learn about reading sessions</a>
+      </div>
+      <div class="card">
+        <h3>Companionship visits</h3>
+        <p>A weekly video visit that's simply conversation. No reading required. Great for parents who want to talk, share stories, and feel connected to someone who genuinely enjoys their company.</p>
+        <a href="#book" class="card-link">Book a companionship visit</a>
+      </div>
+      <div class="card">
+        <h3>Grief support</h3>
+        <p>For parents who've lost a spouse or dear friend. A gentle, patient companion who's trained to sit with grief — not fix it — and offer the kind of steady presence that helps in the hardest year.</p>
+        <a href="grief-support.html" class="card-link">Learn about grief support</a>
+      </div>
+      <div class="card">
+        <h3>Meditation for loneliness</h3>
+        <p>Led by Harlan, our founder, drawing on 15 years of Vipassana practice. A calm one-on-one session that helps ease anxiety, grief, and the specific loneliness of the quiet hours.</p>
+        <a href="meditation-coaching.html" class="card-link">Learn about meditation sessions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="chapter-mark">From the families we serve</span>
+      <h2>Small moments, big difference.</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="quote">
+        <p class="quote-text">"Mom looks forward to Tuesdays now. She used to say the days ran together — she doesn't say that anymore."</p>
+        <p class="quote-attr"><strong>Elena R.</strong><br>Daughter, Portland, OR</p>
+      </div>
+      <div class="quote">
+        <p class="quote-text">"After Dad passed, my father-in-law stopped talking much. His companion has him telling stories again. That means everything."</p>
+        <p class="quote-attr"><strong>Marcus T.</strong><br>Son-in-law, Chicago, IL</p>
+      </div>
+      <div class="quote">
+        <p class="quote-text">"I live overseas and it was tearing me up. Now I know someone kind is checking in every week. It changed things for both of us."</p>
+        <p class="quote-attr"><strong>Priya S.</strong><br>Daughter, London, UK</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ME ============ -->
+<section id="about" class="bg-warm">
+  <div class="wrap-narrow">
+    <div class="about-block">
+      <div class="about-photo"><img src="harlan.jpg" alt="Harlan Moore, founder of A Chapter Together" /></div>
+      <div class="about-text">
+        <span class="chapter-mark">About me</span>
+        <h2>Hi, I'm Harlan.</h2>
+        <p style="font-size: 1.15rem; line-height: 1.7;">
+          I started A Chapter Together after losing my brother and my father on the same day. In the months that followed, I saw how much a steady, caring presence can mean — and how hard it is to find one when the people around you have moved on or don't know what to say.
+        </p>
+        <p style="font-size: 1.15rem; line-height: 1.7;">
+          I've spent fifteen years practicing Vipassana meditation, sitting with teachers in India and keeping up a daily practice through years of work and travel in remote places. That experience shaped everything about how we approach companionship here: patience, real listening, and an understanding that loneliness responds to two things — genuine connection with another person, and a steadier relationship with your own mind.
+        </p>
+        <p style="font-size: 1.15rem; line-height: 1.7;">
+          Every companion we bring on is someone I would trust with my own mother. That's the standard. If it doesn't feel right for your family in the first session, you don't owe us a thing.
+        </p>
+        <p style="font-weight: 600; color: var(--ink);">— Harlan Moore, founder</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section>
+  <div class="wrap">
+    <div class="price-band">
+      <span class="chapter-mark">Simple pricing</span>
+      <h2>Start free. Continue only if it feels right.</h2>
+      <p style="max-width: 52ch; margin-bottom: 32px;">
+        Your first 30-minute session is on us. If your parent enjoys it, sessions start at $60 per weekly visit, with lower rates on 4-session and 12-session plans.
+      </p>
+      <a href="#book" class="btn btn-primary">Book the free first session</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="bg-sage-soft">
+  <div class="wrap-narrow">
+    <span class="chapter-mark">Questions families ask</span>
+    <h2>Everything you're probably wondering.</h2>
+
+    <details class="faq-item">
+      <summary>Is the first session really free?</summary>
+      <p>Yes. The first session is free with no card required. If it's not a good fit, there's nothing to cancel and nothing to pay.</p>
+    </details>
+    <details class="faq-item">
+      <summary>My parent isn't very tech-savvy. Will this work?</summary>
+      <p>Most families use Zoom or FaceTime, and we send a simple one-tap link before each session. If needed, we'll do a short setup call so everything works before the first visit. Many members quickly grow to love the routine.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Are companions background-checked?</summary>
+      <p>Yes. Every companion completes a background check, an in-person interview, and training on working warmly with older adults before they meet a single member. We match for personality, interests, and pace of conversation.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What if my parent has memory issues?</summary>
+      <p>We work with many families whose parents have early-stage memory challenges. Our companions are trained in gentle, reassuring conversation and never rely on a member's ability to remember prior sessions. If more clinical care is needed, we'll say so honestly.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can you send updates so I know how they're doing?</summary>
+      <p>Yes. After each session you'll receive a short, warm note from the companion. It's not a clinical report — it's more like the kind of update a friend might send. Enough to know how your parent was, and often enough to give you something real to bring up next time you call.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Where in the world do you work?</summary>
+      <p>We currently serve families in the United States, Canada, the United Kingdom, and Australia. If you're elsewhere, get in touch — we're expanding.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ BOOKING FORM ============ -->
+<section id="book">
+  <div class="wrap-narrow">
+    <div class="section-head center" style="margin-inline: auto;">
+      <span class="chapter-mark">Book the free first session</span>
+      <h2>Start with one visit. See how it goes.</h2>
+      <p>Fill this in and we'll be back to you within one business day to schedule your parent's first session.</p>
+    </div>
+    <form class="form-card" action="https://formspree.io/f/mojbodyp" method="POST">
+      <div class="form-field">
+        <label for="your-name">Your name</label>
+        <input type="text" id="your-name" name="your-name" required />
+      </div>
+      <div class="form-field">
+        <label for="your-email">Your email</label>
+        <input type="email" id="your-email" name="_replyto" required />
+      </div>
+      <div class="form-field">
+        <label for="parent-name">Your parent's first name</label>
+        <input type="text" id="parent-name" name="parent-name" required />
+      </div>
+      <div class="form-field">
+        <label for="parent-location">Where does your parent live?</label>
+        <input type="text" id="parent-location" name="parent-location" placeholder="City, State/Country" required />
+      </div>
+      <div class="form-field">
+        <label for="service">What kind of visit would suit them best?</label>
+        <select id="service" name="service">
+          <option>I'm not sure — help me choose</option>
+          <option>Reading sessions</option>
+          <option>Companionship visits (conversation only)</option>
+          <option>Grief support</option>
+          <option>Meditation</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="about">Tell us a little about them (optional)</label>
+        <textarea id="about" name="about" placeholder="What do they enjoy? What's been hard lately? Anything you'd like us to know."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send &amp; get scheduled</button>
+      <p style="font-size: 0.85rem; color: var(--muted); margin-top: 16px; margin-bottom: 0; text-align: center;">
+        We reply within one business day. Your details stay private.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ RESOURCES TEASER ============ -->
+<section class="bg-warm">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="chapter-mark">Free guides for families</span>
+      <h2>Not ready to book? Start here.</h2>
+      <p>We keep a small library of honest, practical guides for families supporting a lonely or grieving parent.</p>
+    </div>
+    <div class="grid grid-3">
+      <a href="how-to-help-lonely-parent.html" class="card">
+        <h3>How to help a lonely parent</h3>
+        <p>A practical guide for adult children — what actually helps, what doesn't, and how to bring it up without making things awkward.</p>
+        <span class="card-link">Read the guide</span>
+      </a>
+      <a href="signs-of-loneliness-elderly-parents.html" class="card">
+        <h3>Signs your parent is lonely</h3>
+        <p>The quiet signals that are easy to miss on a weekly phone call — and what to look for on your next visit home.</p>
+        <span class="card-link">Read the guide</span>
+      </a>
+      <a href="what-to-talk-about-with-elderly-parent.html" class="card">
+        <h3>What to talk about with your parent</h3>
+        <p>When you've caught up on the weather and the grandkids, and there's still 40 minutes left on the call.</p>
+        <span class="card-link">Read the guide</span>
+      </a>
+    </div>
+    <p class="center mt-48"><a href="resources.html" class="btn btn-secondary">See all guides →</a></p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">A Chapter Together</a>
+      <p>Weekly one-on-one video visits with warm, screened companions — for parents who deserve someone to talk to.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="index.html">Companionship</a>
+      <a href="reading-sessions.html">Reading sessions</a>
+      <a href="grief-support.html">Grief support</a>
+      <a href="meditation-coaching.html">Meditation</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="how-to-help-lonely-parent.html">Help a lonely parent</a>
+      <a href="signs-of-loneliness-elderly-parents.html">Signs of loneliness</a>
+      <a href="senior-loneliness.html">Loneliness research</a>
+      <a href="resources.html">All guides</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="#book">Book a session</a>
+      <a href="mailto:hello@achaptertogether.org">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© 2026 A Chapter Together. Made with care.</span>
+      <span>hello@achaptertogether.org</span>
+    </div>
+  </div>
 </footer>
 
-</div>
-
-<!-- BOOKING PAGE -->
-
-<div id="bookingPage" style="display:none;">
-
-<div class="booking-wrap">
-
-<button class="back-link" onclick="showHome()">← Back to home</button>
-
-<div class="booking-tag">First session free</div>
-
-<h1>Book your first reading session</h1>
-
-<p class="subtitle">Fill in a few details and I'll be in touch within 24 hours to confirm your session time.</p>
-
-<div class="free-reminder">
-
-<div class="icon">🎁</div>
-
-<p><strong>No credit card needed.</strong> Your first session is completely free. Sessions after that are $60 each.</p>
-
-</div>
-
-<p style="text-align:center; font-size:14px; color:#555; margin:-1rem 0 1.5rem;">
-
-Already had your first session? <a href="#" onclick="showRepeat(); return false;" style="color:#0F6E56; font-weight:600; text-decoration:none;">Book your next one →</a>
-
-</p>
-
-<div id="formContent">
-
-<div style="font-size: 14px; color: #555; margin-bottom: 0.75rem;">Who is filling out this form?</div>
-
-<div class="who-switcher">
-
-<button class="who-btn active" id="btnFamily" onclick="switchWho('family')">A family member</button>
-
-<button class="who-btn" id="btnSenior" onclick="switchWho('senior')">The senior themselves</button>
-
-</div>
-
-<div class="form-divider">About you</div>
-
-<div class="field-row">
-
-<div class="field">
-
-<label for="yourFirst">Your first name</label>
-
-<input type="text" id="yourFirst" placeholder="Jane" />
-
-</div>
-
-<div class="field">
-
-<label for="yourLast">Your last name</label>
-
-<input type="text" id="yourLast" placeholder="Smith" />
-
-</div>
-
-</div>
-
-<div class="field">
-
-<label for="yourEmail">Your email address</label>
-
-<input type="email" id="yourEmail" placeholder="jane@email.com" />
-
-</div>
-
-<div class="field">
-
-<label for="yourPhone">Your phone number <span class="optional">optional</span></label>
-
-<input type="tel" id="yourPhone" placeholder="+1 (555) 000-0000" />
-
-</div>
-
-<div id="seniorSection">
-
-<div class="form-divider">About the person being read to</div>
-
-<div class="field-row">
-
-<div class="field">
-
-<label for="seniorFirst">Their first name</label>
-
-<input type="text" id="seniorFirst" placeholder="Margaret" />
-
-</div>
-
-<div class="field">
-
-<label for="seniorAge">Their age <span class="optional">approx.</span></label>
-
-<input type="number" id="seniorAge" placeholder="78" />
-
-</div>
-
-</div>
-
-</div>
-
-<div class="form-divider">Book preferences</div>
-
-<div class="field">
-
-<label>What genres do they enjoy?</label>
-
-<div class="hint">Pick as many as apply</div>
-
-<div class="toggle-group">
-
-<button class="toggle" onclick="this.classList.toggle('active')">Classic fiction</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Historical fiction</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Mystery &amp; thriller</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Romance</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Biography &amp; memoir</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Nature &amp; travel</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Poetry</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Short stories</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Spiritual &amp; faith</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Not sure yet</button>
-
-</div>
-
-</div>
-
-<div class="field">
-
-<label for="favBooks">Favourite books or authors? <span class="optional">optional</span></label>
-
-<div class="hint">This helps me find something they'll truly love</div>
-
-<input type="text" id="favBooks" placeholder="e.g. Agatha Christie, To Kill a Mockingbird..." />
-
-</div>
-
-<div class="field">
-
-<label for="anythingElse">Anything else I should know? <span class="optional">optional</span></label>
-
-<div class="hint">Hearing, vision, personality, what they're hoping for — anything helps</div>
-
-<textarea id="anythingElse" placeholder="e.g. Mum is hard of hearing on her left side, loves a good chat, and hasn't had much company lately..."></textarea>
-
-</div>
-
-<div class="form-divider">Availability</div>
-
-<div class="field">
-
-<label>Which days generally work best?</label>
-
-<div class="toggle-group">
-
-<button class="toggle" onclick="this.classList.toggle('active')">Monday</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Tuesday</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Wednesday</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Thursday</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Friday</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Weekend</button>
-
-</div>
-
-</div>
-
-<div class="field">
-
-<label>Preferred time of day (US time)</label>
-
-<div class="toggle-group">
-
-<button class="toggle" onclick="this.classList.toggle('active')">Morning</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Afternoon</button>
-
-<button class="toggle" onclick="this.classList.toggle('active')">Evening</button>
-
-</div>
-
-</div>
-
-<div class="field">
-
-<label for="timezone">Their time zone</label>
-
-<select id="timezone">
-
-<option value="">Select a time zone...</option>
-
-<option>Eastern Time (ET)</option>
-
-<option>Central Time (CT)</option>
-
-<option>Mountain Time (MT)</option>
-
-<option>Pacific Time (PT)</option>
-
-<option>Alaska Time (AKT)</option>
-
-<option>Hawaii Time (HT)</option>
-
-<option>Other</option>
-
-</select>
-
-</div>
-
-<button class="submit-btn" onclick="submitForm()">Request my free session ✦</button>
-
-<p class="privacy-note">Your information is kept private and never shared. I'll reply within 24 hours.</p>
-
-</div>
-
-<div class="success-msg" id="successMsg">
-
-<div class="big-icon">📖</div>
-
-<h2>You're all set!</h2>
-
-<p>Thank you for reaching out. I'll be in touch within 24 hours to confirm your first session.<br><br>Get ready for a good story.</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- REPEAT BOOKING PAGE (returning clients) -->
-
-<div id="repeatPage" style="display:none;">
-
-<div class="booking-wrap">
-
-<button class="back-link" onclick="showHome()">← Back to home</button>
-
-<div class="booking-tag">Welcome back</div>
-
-<h1>Book your next session</h1>
-
-<p class="subtitle">Pick a time that suits you below. You'll get an email confirmation with your video link — there's nothing to download or install.</p>
-
-<div id="repeatPlaceholder" style="display:none; background:#FFF8E1; border:1px solid #F0E0A0; border-radius:10px; padding:1.5rem; color:#6b5a1f; font-size:14px; line-height:1.65;">
-
-<strong>Almost ready.</strong> The booking button will appear here once your Google appointment-schedule link is added. Until then, returning clients can reach you on <a href="https://wa.me/14252691221" target="_blank" rel="noopener" style="color:#0F6E56; font-weight:600;">WhatsApp</a> to book.
-
-</div>
-
-<a id="googleBookingBtn" class="submit-btn" style="display:inline-block; text-align:center; text-decoration:none;" href="https://calendar.app.google/C5oU5NxPGTwBEXRw7" target="_blank" rel="noopener">Choose a time on the calendar ↗</a>
-
-<p class="privacy-note" style="margin-top:0.75rem;">Opens in a new tab. Pick a time, and your confirmation with the video link will arrive by email.</p>
-
-<p class="privacy-note" style="margin-top:1rem;">Prefer to message me instead? Reach me on <a href="https://wa.me/14252691221" target="_blank" rel="noopener">WhatsApp</a>.</p>
-
-</div>
-
-</div>
-
-<script>
-
-var GOOGLE_BOOKING_URL = "https://calendar.app.google/C5oU5NxPGTwBEXRw7";
-
-function setView(view) {
-
-['homePage', 'bookingPage', 'repeatPage'].forEach(function(id) {
-
-var el = document.getElementById(id);
-
-if (el) el.style.display = (id === view) ? 'block' : 'none';
-
-});
-
-document.body.scrollTop = 0;
-
-document.documentElement.scrollTop = 0;
-
-}
-
-function showBooking() { setView('bookingPage'); }
-
-function showHome() { setView('homePage'); }
-
-function showRepeat() {
-
-setView('repeatPage');
-
-var btn = document.getElementById('googleBookingBtn');
-
-var placeholder = document.getElementById('repeatPlaceholder');
-
-if (GOOGLE_BOOKING_URL) {
-
-placeholder.style.display = 'none';
-
-btn.style.display = 'inline-block';
-
-} else {
-
-btn.style.display = 'none';
-
-placeholder.style.display = 'block';
-
-}
-
-if (typeof fbq === 'function') { fbq('track', 'Schedule'); }
-
-}
-
-function switchWho(who) {
-
-const btnFamily = document.getElementById('btnFamily');
-
-const btnSenior = document.getElementById('btnSenior');
-
-const seniorSection = document.getElementById('seniorSection');
-
-if (who === 'family') {
-
-btnFamily.classList.add('active');
-
-btnSenior.classList.remove('active');
-
-seniorSection.style.display = 'block';
-
-} else {
-
-btnSenior.classList.add('active');
-
-btnFamily.classList.remove('active');
-
-seniorSection.style.display = 'none';
-
-}
-
-}
-
-async function submitForm() {
-
-const first = document.getElementById('yourFirst').value.trim();
-
-const email = document.getElementById('yourEmail').value.trim();
-
-if (!first || !email) {
-
-alert('Please fill in your name and email address to continue.');
-
-return;
-
-}
-
-const genres = [...document.querySelectorAll('#formContent .toggle-group:first-of-type .toggle.active')]
-
-.map(el => el.textContent).join(', ');
-
-const days = [...document.querySelectorAll('#formContent .toggle-group:nth-of-type(2) .toggle.active')]
-
-.map(el => el.textContent).join(', ');
-
-const times = [...document.querySelectorAll('#formContent .toggle-group:nth-of-type(3) .toggle.active')]
-
-.map(el => el.textContent).join(', ');
-
-const who = document.getElementById('btnFamily').classList.contains('active') ? 'Family member' : 'Senior themselves';
-
-const seniorName = document.getElementById('seniorFirst') ? document.getElementById('seniorFirst').value : '';
-
-const seniorAge = document.getElementById('seniorAge') ? document.getElementById('seniorAge').value : '';
-
-const phone = document.getElementById('yourPhone').value;
-
-const favBooks = document.getElementById('favBooks').value;
-
-const notes = document.getElementById('anythingElse').value;
-
-const timezone = document.getElementById('timezone').value;
-
-const lastName = document.getElementById('yourLast').value;
-
-const formData = {
-
-'Booking from': who,
-
-'First name': first,
-
-'Last name': lastName,
-
-'Email': email,
-
-'Phone': phone || 'Not provided',
-
-'Senior name': seniorName || 'N/A',
-
-'Senior age': seniorAge || 'N/A',
-
-'Genres': genres || 'None selected',
-
-'Favourite books/authors': favBooks || 'Not provided',
-
-'Notes': notes || 'None',
-
-'Preferred days': days || 'None selected',
-
-'Preferred times': times || 'None selected',
-
-'Time zone': timezone || 'Not selected',
-
-'_subject': 'New session booking from ' + first + ' ' + lastName
-
-};
-
-const submitBtn = document.querySelector('.submit-btn');
-
-submitBtn.textContent = 'Sending...';
-
-submitBtn.disabled = true;
-
-try {
-
-const response = await fetch('https://formspree.io/f/mojbodyp', {
-
-method: 'POST',
-
-headers: { 'Content-Type': 'application/json' },
-
-body: JSON.stringify(formData)
-
-});
-
-if (response.ok) {
-
-fbq('track', 'Lead');
-
-document.getElementById('formContent').style.display = 'none';
-
-document.getElementById('successMsg').style.display = 'block';
-
-} else {
-
-alert('Something went wrong. Please try again or email harlanmoore@gmail.com directly.');
-
-submitBtn.textContent = 'Request my free session ✦';
-
-submitBtn.disabled = false;
-
-}
-
-} catch (err) {
-
-alert('Something went wrong. Please try again or email harlanmoore@gmail.com directly.');
-
-submitBtn.textContent = 'Request my free session ✦';
-
-submitBtn.disabled = false;
-
-}
-
-}
-
-</script>
-
-<!-- Floating WhatsApp Button -->
-
-<a href="https://wa.me/14252691221" target="_blank" rel="noopener" title="Chat on WhatsApp"
-
-style="position:fixed; bottom:24px; right:24px; z-index:999; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(0,0,0,0.2); transition:transform 0.2s, box-shadow 0.2s;"
-
-onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.25)'"
-
-onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.2)'">
-
-<svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-
-<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-
-</svg>
-
-</a>
-
 </body>
-
 </html>

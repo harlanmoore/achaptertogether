@@ -16,6 +16,7 @@
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://achaptertogether.org/grief-support.html" />
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
 <script type="application/ld+json">
 {
 "@context": "https://schema.org",
@@ -43,8 +44,11 @@
 ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="shared.css" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DZR4T1YFC"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -52,6 +56,8 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-5DZR4T1YFC');
 </script>
+
+<!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -66,196 +72,265 @@ fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=332609950231827&ev=PageView&noscript=1"/></noscript>
+
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Inter', sans-serif; background: #fafaf8; color: #1a1a1a; }
-.nav-dd > a.dd-trigger:hover { color: #085041; }
-.nav-dd > a.dd-trigger.current { color: #085041; font-weight: 500; }
-footer { background: #1a1a1a; color: #888; text-align: center; padding: 2.5rem 2rem; font-size: 13px; }
-footer a { color: #9FE1CB; text-decoration: none; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid #333; }
-.footer-links a { color: #ccc; font-size: 14px; }
-.footer-links a:hover { color: #9FE1CB; }
-.hero { background: #F3EFE8; padding: 4rem 2rem 3rem; text-align: center; }
-.hero-tag { font-size: 13px; color: #6B5A3E; background: #E6DCC8; padding: 4px 16px; border-radius: 20px; display: inline-block; margin-bottom: 1.5rem; }
-.hero h1 { font-size: 38px; font-weight: 500; color: #3A2F1E; line-height: 1.25; margin-bottom: 1rem; max-width: 640px; margin-left: auto; margin-right: auto; }
-.hero p { font-size: 17px; color: #5C5040; line-height: 1.75; max-width: 540px; margin: 0 auto 1.75rem; }
-.btn-primary { background: #8C7245; color: white; border: none; padding: 15px 36px; border-radius: 8px; font-size: 16px; font-weight: 500; cursor: pointer; font-family: inherit; text-decoration: none; display: inline-block; }
-.btn-primary:hover { background: #715B36; }
-.section { padding: 3.5rem 2rem; max-width: 760px; margin: 0 auto; }
-.section h2 { font-size: 26px; font-weight: 500; color: #1a1a1a; margin-bottom: 1rem; }
-.section p { font-size: 16px; color: #555; line-height: 1.8; margin-bottom: 1rem; }
-.boundary-box { background: #F3EFE8; border-left: 4px solid #8C7245; border-radius: 8px; padding: 1.75rem; margin: 1rem 0; }
-.boundary-box p { color: #4A3F2C; margin-bottom: 0.75rem; }
+/* --- Page-specific styles for grief support --- */
+.grief-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+.grief-step {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+.grief-step-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--rose-soft); color: var(--rose);
+  font-size: 0.9rem; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.grief-step h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.grief-step p { font-size: 0.95rem; color: var(--ink-soft); margin: 0; }
+@media (max-width: 700px) { .grief-steps { grid-template-columns: 1fr; } }
+
+.boundary-box {
+  background: var(--bg-warm);
+  border-left: 4px solid var(--rose);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  margin-top: 16px;
+}
+.boundary-box p { color: var(--ink-soft); margin-bottom: 12px; }
 .boundary-box p:last-child { margin-bottom: 0; }
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 1.5rem; }
-.step-card { background: white; border: 1px solid #e8e6e0; border-radius: 12px; padding: 1.5rem; }
-.step-num { width: 34px; height: 34px; border-radius: 50%; background: #F3EFE8; color: #8C7245; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
-.step-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
-.step-card p { font-size: 13px; color: #666; line-height: 1.65; margin: 0; }
-.meet { background: #f4f4f0; padding: 3.5rem 2rem; }
-.meet-inner { max-width: 720px; margin: 0 auto; display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap; }
-.photo-circle { width: 140px; height: 140px; border-radius: 50%; background: #E6DCC8; border: 4px solid #8C7245; overflow: hidden; flex-shrink: 0; }
+
+.meet-block {
+  display: flex; gap: 40px; align-items: center; flex-wrap: wrap;
+}
+.photo-circle {
+  width: 140px; height: 140px; border-radius: 50%;
+  background: var(--rose-soft); border: 4px solid var(--rose);
+  overflow: hidden; flex-shrink: 0;
+}
 .photo-circle img { width: 100%; height: 100%; object-fit: cover; }
-.meet-text p { font-size: 15px; color: #4A3F2C; line-height: 1.8; }
-.pricing-band { background: #3A2F1E; padding: 3.5rem 2rem; text-align: center; }
-.pricing-band h2 { font-size: 28px; font-weight: 500; color: #F3EFE8; margin-bottom: 1.5rem; }
-.price-row { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 2rem; }
-.price-item .num { font-size: 30px; font-weight: 500; color: white; }
-.price-item .label { font-size: 13px; color: #C9BFA8; margin-top: 4px; }
-.btn-white { background: white; color: #3A2F1E; border: none; padding: 15px 36px; border-radius: 8px; font-size: 16px; font-weight: 500; cursor: pointer; font-family: inherit; text-decoration: none; display: inline-block; }
-.faq-item { border-bottom: 1px solid #e8e6e0; padding: 1.25rem 0; }
-.faq-item h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
-.faq-item p { font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
-@media (max-width: 600px) {
-.hero h1 { font-size: 28px; }
-.meet-inner { flex-direction: column; text-align: center; }
-.price-row { gap: 1.5rem; }
+.meet-text { flex: 1; min-width: 280px; }
+.meet-text p { font-size: 1.05rem; line-height: 1.75; color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .meet-block { flex-direction: column; text-align: center; }
+  .photo-circle { margin: 0 auto; }
 }
 
-/* === NAV === */
-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid #e8e6e0; background: white; position: sticky; top: 0; z-index: 50; }
-.nav-logo { font-size: 18px; font-weight: 500; color: #085041; text-decoration: none; }
-.nav-links { display: flex; gap: 22px; align-items: center; }
-.nav-links > a { font-size: 14px; color: #555; text-decoration: none; }
-.nav-links > a:hover { color: #085041; }
-.nav-links > a.current { color: #085041; font-weight: 500; }
-.nav-dd { position: relative; display: flex; align-items: center; }
-.nav-dd > a.dd-trigger { font-size: 14px; color: #555; text-decoration: none; display: flex; align-items: center; gap: 4px; cursor: pointer; }
-.nav-dd > a.dd-trigger:hover,
-.nav-dd > a.dd-trigger.current { color: #085041; font-weight: 500; }
-/* Invisible bridge fills the gap so mouse doesn't lose hover */
-.nav-dd-menu {
-  position: absolute; top: 100%; right: 0;
-  padding-top: 10px; /* bridge — mouse travels over this invisible space */
-  display: none; flex-direction: column;
+.grief-faq-item {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
 }
-.nav-dd-menu-inner {
-  background: white; border: 1px solid #e8e6e0; border-radius: 10px;
-  padding: 6px; min-width: 250px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  display: flex; flex-direction: column;
-}
-.nav-dd:hover .nav-dd-menu { display: flex; }
-.nav-dd-menu a { padding: 9px 12px; border-radius: 7px; font-size: 14px; color: #444; text-decoration: none; display: block; }
-.nav-dd-menu a:hover { background: #E1F5EE; color: #085041; }
-.nav-dd-menu a.current { color: #085041; font-weight: 500; }
-.nav-dd-menu .dd-sep { border-top: 1px solid #f0eee8; margin: 5px 4px; }
-.nav-cta { background: #1D9E75; color: white; padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap; }
-.nav-cta:hover { background: #0F6E56; color: white; }
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-.nav-toggle span { display: block; width: 22px; height: 2px; background: #085041; margin: 4px 0; border-radius: 2px; transition: 0.2s; }
-.mobile-menu { display: none; flex-direction: column; background: white; border-bottom: 1px solid #e8e6e0; padding: 0.5rem 2rem 1.25rem; position: sticky; top: 61px; z-index: 49; }
-.mobile-menu > a { padding: 11px 0; font-size: 15px; color: #444; text-decoration: none; border-bottom: 1px solid #f0eee8; display: block; }
-.mobile-menu > a.current { color: #085041; font-weight: 500; }
-.mobile-menu .mm-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #aaa; padding: 14px 0 4px; }
-.mobile-menu.open { display: flex; }
-@media (max-width: 860px) { .nav-links { display: none; } .nav-toggle { display: block; } }
-/* === END NAV === */
-
+.grief-faq-item h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.grief-faq-item p { font-size: 1rem; color: var(--ink-soft); margin: 0; }
 </style>
 </head>
 <body>
+
+<!-- ============ NAV ============ -->
+<div class="nav-outer">
 <nav>
   <a href="index.html" class="nav-logo">A Chapter Together</a>
   <div class="nav-links">
-    <a href="index.html">Reading sessions</a>
-    <a href="meditation-coaching.html">Meditation coaching</a>
-    <a href="companionship.html">Companionship</a>
+    <a href="index.html">Companionship</a>
+    <a href="reading-sessions.html">Reading sessions</a>
     <a href="grief-support.html" class="current">Grief support</a>
+    <a href="meditation-coaching.html">Meditation</a>
     <div class="nav-dd">
-      <a href="resources.html" class="dd-trigger">Resources ▾</a>
-      <div class="nav-dd-menu"><div class="nav-dd-menu-inner">
-        <a href="resources.html">Senior guides &amp; resources</a>
-        <a href="meditation-resources.html">Meditation guides</a>
+      <a href="resources.html" class="dd-trigger">Resources &#9662;</a>
+      <div class="nav-dd-menu"><div class="nav-dd-inner">
+        <a href="how-to-help-lonely-parent.html">How to help a lonely parent</a>
+        <a href="signs-of-loneliness-elderly-parents.html">Signs of loneliness</a>
+        <a href="what-to-talk-about-with-elderly-parent.html">What to talk about</a>
+        <a href="activities-for-seniors-who-live-alone.html">Activities for seniors alone</a>
+        <a href="senior-loneliness.html">Senior loneliness (research)</a>
+        <a href="resources.html">All resources &rarr;</a>
       </div></div>
     </div>
-    <a href="index.html" class="nav-cta">Book free session</a>
+    <a href="index.html#book" class="nav-cta">Book free session</a>
   </div>
   <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
-    <span></span><span></span><span></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Reading sessions</a>
-  <a href="meditation-coaching.html">Meditation coaching</a>
-  <a href="companionship.html">Companionship</a>
+  <a href="index.html">Companionship</a>
+  <a href="reading-sessions.html">Reading sessions</a>
   <a href="grief-support.html" class="current">Grief support</a>
-    <div class="mm-label">Resources</div>
-  <a href="resources.html">Senior guides &amp; resources</a>
-  <a href="meditation-resources.html">Meditation guides</a>
+  <a href="meditation-coaching.html">Meditation</a>
+  <a href="resources.html">Resources</a>
+  <a href="index.html#book" class="nav-cta">Book free session</a>
+</div>
+</div>
 
-  <a href="index.html" style="color:#0F6E56; font-weight:500;">Book a free session →</a>
-</div>
-
-<div class="hero">
-<div class="hero-tag">A space made for this</div>
-<h1>Someone to talk to about the person you lost.</h1>
-<p>Grief can be a lonely place, especially when the people around you have moved on, live far away, or don't know what to say anymore. I'm here to listen — to memories, to the hard days, to the ordinary things you miss. No agenda, no time limit on how long grief should take.</p>
-<a href="mailto:harlanmoore@gmail.com?subject=Free%20grief%20support%20conversation" class="btn-primary">Book a free 15-minute conversation</a>
-<p style="font-size:13px; color:#8C7245; margin-top:0.85rem; margin-bottom:0;">No commitment. Just a short, gentle chance to talk, and to see if this feels right.</p>
-</div>
-<div class="section">
-<h2>What this is</h2>
-<p>This isn't grief counseling or therapy, and I'm not a licensed clinician. What I offer is something different: company. A regular, unhurried conversation with someone whose only job, for 45 minutes, is to listen — to stories about your person, to how you're really doing, to whatever you need to say out loud that day.</p>
-<p>Some sessions are full of memories. Some are quiet. Some might not be about your loss at all — just company on a hard week. There's no script, and no "right" way to grieve here.</p>
-</div>
-<div class="section">
-<h2>How it works</h2>
-<div class="steps">
-<div class="step-card"><div class="step-num">1</div><h3>Book a free 15-minute conversation</h3><p>We'll talk, and you'll get a feel for whether this is helpful — no pressure to decide anything on the spot.</p></div>
-<div class="step-card"><div class="step-num">2</div><h3>Join by video, from wherever you are</h3><p>One click, nothing to download.</p></div>
-<div class="step-card"><div class="step-num">3</div><h3>If it's helpful, keep going</h3><p>Sessions after the first are $90 for 45 minutes, scheduled whenever suits you.</p></div>
-</div>
-</div>
-<div class="section">
-<h2>Where this fits — and where it doesn't</h2>
-<div class="boundary-box">
-<p>I want to be honest about what this is and isn't, because grief deserves honesty.</p>
-<p>This is companionship — a steady, caring presence and a listening ear. It is <strong>not</strong> therapy, counseling, or medical treatment, and I'm not trained to diagnose or treat anything.</p>
-<p>If grief ever feels like more than you can carry — if it comes with thoughts of harming yourself, or feels stuck in a way that isn't easing with time — please reach out to a grief counselor, your doctor, or a crisis line. I'm glad to sit with you in the everyday weight of missing someone. Some grief also needs a professional alongside that, and there's no shame in needing both.</p>
-</div>
-</div>
-<div class="meet">
-<div class="meet-inner">
-<div class="photo-circle"><img src="harlan.jpg" alt="Harlan, founder of A Chapter Together" /></div>
-<div class="meet-text">
-<h2 style="font-size:22px; font-weight:500; margin-bottom:0.85rem; color:#3A2F1E;">A note from Harlan</h2>
-<p>I lost my brother and my father on the same day, two years ago. When someone passes, there are so many stages to it, and so much to process. It really helps to have someone to talk to — someone you can share memories with, and talk to about how you're handling the loss.</p>
-<p>Today, finding a real person to talk to can be a real challenge. That's part of why I created this. Reach out, and let's connect.</p>
-</div>
-</div>
-</div>
-<div class="pricing-band">
-<h2>Simple, honest pricing</h2>
-<div class="price-row">
-<div class="price-item"><div class="num">Free</div><div class="label">First conversation · 15 minutes</div></div>
-<div class="price-item"><div class="num">$90</div><div class="label">Ongoing sessions · 45 minutes</div></div>
-</div>
-<a href="mailto:harlanmoore@gmail.com?subject=Free%20grief%20support%20conversation" class="btn-white">Book a free 15-minute conversation</a>
-</div>
-<div class="section">
-<h2>Questions</h2>
-<div class="faq-item"><h3>Is this therapy?</h3><p>No. I'm not a licensed therapist or counselor. This is companionship and conversation, not clinical treatment.</p></div>
-<div class="faq-item"><h3>What if I just want to talk about my person, not "process my grief"?</h3><p>That's exactly what this is for. There's no agenda — we talk about whatever you want, including just remembering them.</p></div>
-<div class="faq-item"><h3>How often do people book sessions?</h3><p>However often feels right to you — weekly, every other week, or just whenever you need it.</p></div>
-<div class="faq-item"><h3>What if I'm not sure this is what I need?</h3><p>The first conversation is free and just 15 minutes for exactly that reason — low pressure, just a chance to see how it feels before deciding anything.</p></div>
-</div>
-<footer>
-  <div class="footer-links">
-    <a href="index.html">Reading sessions</a>
-    <a href="meditation-coaching.html">Meditation coaching</a>
-    <a href="companionship.html">Companionship</a>
-    <a href="grief-support.html">Grief support</a>
-    <a href="resources.html">Resources</a>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">A space made for this</div>
+    <h1>Someone to talk to about the person you lost.</h1>
+    <p class="hero-lede">
+      Grief can be a lonely place, especially when the people around you have moved on, live far away, or don't know what to say anymore. I'm here to listen — to memories, to the hard days, to the ordinary things you miss. No agenda, no time limit on how long grief should take.
+    </p>
+    <div class="hero-actions">
+      <a href="mailto:harlanmoore@gmail.com?subject=Free%20grief%20support%20conversation" class="btn btn-primary">Book a free 15-minute conversation</a>
+    </div>
+    <p class="hero-note">No commitment. Just a short, gentle chance to talk, and to see if this feels right.</p>
   </div>
-  <p>© 2026 A Chapter Together · <a href="mailto:harlanmoore@gmail.com">harlanmoore@gmail.com</a> · <a href="https://wa.me/14252691221" target="_blank" rel="noopener">WhatsApp +1 (425) 269-1221</a></p>
+</section>
+
+<!-- ============ WHAT THIS IS ============ -->
+<section>
+  <div class="wrap-narrow">
+    <span class="chapter-mark">What this is</span>
+    <h2>Company for the hardest days</h2>
+    <p style="font-size: 1.1rem; line-height: 1.75; color: var(--ink-soft);">
+      This isn't grief counseling or therapy, and I'm not a licensed clinician. What I offer is something different: company. A regular, unhurried conversation with someone whose only job, for 45 minutes, is to listen — to stories about your person, to how you're really doing, to whatever you need to say out loud that day.
+    </p>
+    <p style="font-size: 1.1rem; line-height: 1.75; color: var(--ink-soft);">
+      Some sessions are full of memories. Some are quiet. Some might not be about your loss at all — just company on a hard week. There's no script, and no "right" way to grieve here.
+    </p>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="bg-sage-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="chapter-mark">How it works</span>
+      <h2>Three simple steps</h2>
+    </div>
+    <div class="grief-steps">
+      <div class="grief-step">
+        <div class="grief-step-num">1</div>
+        <h3>Book a free 15-minute conversation</h3>
+        <p>We'll talk, and you'll get a feel for whether this is helpful — no pressure to decide anything on the spot.</p>
+      </div>
+      <div class="grief-step">
+        <div class="grief-step-num">2</div>
+        <h3>Join by video, from wherever you are</h3>
+        <p>One click, nothing to download.</p>
+      </div>
+      <div class="grief-step">
+        <div class="grief-step-num">3</div>
+        <h3>If it's helpful, keep going</h3>
+        <p>Sessions after the first are $90 for 45 minutes, scheduled whenever suits you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOUNDARIES ============ -->
+<section>
+  <div class="wrap-narrow">
+    <span class="chapter-mark">Honesty matters</span>
+    <h2>Where this fits — and where it doesn't</h2>
+    <div class="boundary-box">
+      <p>I want to be honest about what this is and isn't, because grief deserves honesty.</p>
+      <p>This is companionship — a steady, caring presence and a listening ear. It is <strong>not</strong> therapy, counseling, or medical treatment, and I'm not trained to diagnose or treat anything.</p>
+      <p>If grief ever feels like more than you can carry — if it comes with thoughts of harming yourself, or feels stuck in a way that isn't easing with time — please reach out to a grief counselor, your doctor, or a crisis line. I'm glad to sit with you in the everyday weight of missing someone. Some grief also needs a professional alongside that, and there's no shame in needing both.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEET HARLAN ============ -->
+<section class="bg-warm">
+  <div class="wrap-narrow">
+    <div class="meet-block">
+      <div class="photo-circle"><img src="harlan.jpg" alt="Harlan, founder of A Chapter Together" /></div>
+      <div class="meet-text">
+        <span class="chapter-mark">A note from Harlan</span>
+        <h2 style="margin-bottom: 12px;">Why I do this</h2>
+        <p>I lost my brother and my father on the same day, two years ago. When someone passes, there are so many stages to it, and so much to process. It really helps to have someone to talk to — someone you can share memories with, and talk to about how you're handling the loss.</p>
+        <p>Today, finding a real person to talk to can be a real challenge. That's part of why I created this. Reach out, and let's connect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section>
+  <div class="wrap">
+    <div class="price-band">
+      <span class="chapter-mark">Simple pricing</span>
+      <h2>Start with a free conversation. Continue only if it helps.</h2>
+      <div style="display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-bottom: 32px;">
+        <div style="text-align: center;">
+          <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 500;">Free</div>
+          <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 4px;">First conversation &middot; 15 minutes</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 500;">$90</div>
+          <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 4px;">Ongoing sessions &middot; 45 minutes</div>
+        </div>
+      </div>
+      <a href="mailto:harlanmoore@gmail.com?subject=Free%20grief%20support%20conversation" class="btn btn-primary" style="background: #fff; color: var(--sage);">Book a free 15-minute conversation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="bg-sage-soft">
+  <div class="wrap-narrow">
+    <span class="chapter-mark">Questions</span>
+    <h2>Everything you're probably wondering.</h2>
+
+    <details class="faq-item">
+      <summary>Is this therapy?</summary>
+      <p>No. I'm not a licensed therapist or counselor. This is companionship and conversation, not clinical treatment.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What if I just want to talk about my person, not "process my grief"?</summary>
+      <p>That's exactly what this is for. There's no agenda — we talk about whatever you want, including just remembering them.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How often do people book sessions?</summary>
+      <p>However often feels right to you — weekly, every other week, or just whenever you need it.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What if I'm not sure this is what I need?</summary>
+      <p>The first conversation is free and just 15 minutes for exactly that reason — low pressure, just a chance to see how it feels before deciding anything.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">A Chapter Together</a>
+      <p>Weekly one-on-one video visits with warm, screened companions — for parents who deserve someone to talk to.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="index.html">Companionship</a>
+      <a href="reading-sessions.html">Reading sessions</a>
+      <a href="grief-support.html">Grief support</a>
+      <a href="meditation-coaching.html">Meditation</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="how-to-help-lonely-parent.html">Help a lonely parent</a>
+      <a href="signs-of-loneliness-elderly-parents.html">Signs of loneliness</a>
+      <a href="senior-loneliness.html">Loneliness research</a>
+      <a href="resources.html">All guides</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="index.html#book">Book a session</a>
+      <a href="mailto:hello@achaptertogether.org">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>&copy; 2026 A Chapter Together. Made with care.</span>
+      <span>hello@achaptertogether.org</span>
+    </div>
+  </div>
 </footer>
-<a href="https://wa.me/14252691221" target="_blank" rel="noopener" title="Chat on WhatsApp"
-style="position:fixed; bottom:24px; right:24px; z-index:999; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(0,0,0,0.2);">
-<svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-</svg>
-</a>
+
 </body>
 </html>
