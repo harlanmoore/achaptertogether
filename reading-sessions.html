@@ -97,7 +97,7 @@
 <body>
 
 <div class="nav-outer">
-<nav>
+<nav aria-label="Main">
   <a href="index.html" class="nav-logo">A Chapter Together</a>
   <div class="nav-links">
     <a href="index.html">Companionship</a>
@@ -105,19 +105,24 @@
     <a href="grief-support.html">Grief support</a>
     <a href="meditation-coaching.html">Meditation</a>
     <div class="nav-dd">
-      <a href="resources.html" class="dd-trigger">Resources ▾</a>
-      <div class="nav-dd-menu"><div class="nav-dd-inner">
+      <button type="button" class="dd-trigger" aria-expanded="false" aria-controls="ddResources">
+        Resources <svg class="dd-caret" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 2 6 7l5-5"/></svg>
+      </button>
+      <div class="nav-dd-menu" id="ddResources">
+        <div class="nav-dd-inner">
         <a href="how-to-help-lonely-parent.html">How to help a lonely parent</a>
-        <a href="signs-of-loneliness-elderly-parents.html">Signs of loneliness</a>
+        <a href="signs-of-loneliness-elderly-parents.html">Signs your parent is lonely</a>
         <a href="what-to-talk-about-with-elderly-parent.html">What to talk about</a>
+        <a href="activities-for-seniors-who-live-alone.html">Activities for seniors alone</a>
         <a href="senior-loneliness.html">Senior loneliness (research)</a>
-        <a href="resources.html">All resources →</a>
-      </div></div>
+          <a href="resources.html" class="dd-all">All resources →</a>
+        </div>
+      </div>
     </div>
     <a href="index.html#book" class="nav-cta">Book free session</a>
   </div>
-  <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
@@ -125,7 +130,17 @@
   <a href="reading-sessions.html" class="current">Reading sessions</a>
   <a href="grief-support.html">Grief support</a>
   <a href="meditation-coaching.html">Meditation</a>
-  <a href="resources.html">Resources</a>
+  <button type="button" class="mobile-sub-toggle" aria-expanded="false" aria-controls="mobileResources">
+    Resources <svg class="dd-caret" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 2 6 7l5-5"/></svg>
+  </button>
+  <div id="mobileResources" class="mobile-sub">
+    <a href="how-to-help-lonely-parent.html">How to help a lonely parent</a>
+    <a href="signs-of-loneliness-elderly-parents.html">Signs your parent is lonely</a>
+    <a href="what-to-talk-about-with-elderly-parent.html">What to talk about</a>
+    <a href="activities-for-seniors-who-live-alone.html">Activities for seniors alone</a>
+    <a href="senior-loneliness.html">Senior loneliness (research)</a>
+    <a href="resources.html">All resources →</a>
+  </div>
   <a href="index.html#book" class="nav-cta">Book free session</a>
 </div>
 </div>
@@ -326,5 +341,6 @@
     </div>
   </div>
 </footer>
+<script src="nav.js" defer></script>
 </body>
 </html>

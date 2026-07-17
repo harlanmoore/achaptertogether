@@ -3,28 +3,29 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Companionship for Lonely Seniors | A Chapter Together</title>
-<meta name="description" content="A Chapter Together pairs older adults with warm, screened companions for weekly one-on-one video visits. Real conversation, real connection — for parents who deserve someone to talk to. First session free." />
+<title>Someone to Talk To — Companionship for Seniors | A Chapter Together</title>
+<meta name="description" content="Weekly one-on-one video visits with a real person — not an AI. Talk about your week, your family, anything at all, or read a book together. I'm Harlan. Your first visit is free, and there's no card required." />
+<meta name="keywords" content="someone to talk to, companionship for seniors, real person not AI, video visits for older adults, someone to talk to when lonely, friendly visits by video, human companion for seniors, read to me over video" />
 <link rel="canonical" href="https://achaptertogether.org/" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="A Chapter Together" />
-<meta property="og:title" content="Companionship for Lonely Seniors | A Chapter Together" />
-<meta property="og:description" content="Weekly one-on-one visits with a warm, screened companion. For parents who deserve someone to talk to." />
+<meta property="og:title" content="Someone to Talk To — Companionship for Seniors | A Chapter Together" />
+<meta property="og:description" content="Weekly one-on-one video visits with a real person, not an AI. Your first visit is free." />
 <meta property="og:url" content="https://achaptertogether.org/" />
 <meta property="og:image" content="https://achaptertogether.org/og-image.jpg" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Companionship for Lonely Seniors | A Chapter Together" />
-<meta name="twitter:description" content="Weekly one-on-one visits with a warm companion. For parents who deserve someone to talk to." />
+<meta name="twitter:title" content="Someone to Talk To — Companionship for Seniors | A Chapter Together" />
+<meta name="twitter:description" content="Weekly video visits with a real person who is glad to see you. First visit free." />
 
 <link rel="stylesheet" href="shared.css" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DZR4T1YFC"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -39,7 +40,7 @@
   n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
   document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', 'YOUR_PIXEL_ID');
+  fbq('init', '332609950231827');
   fbq('track', 'PageView');
 </script>
 
@@ -153,7 +154,7 @@
 
 <!-- ============ NAV ============ -->
 <div class="nav-outer">
-<nav>
+<nav aria-label="Main">
   <a href="index.html" class="nav-logo">A Chapter Together</a>
   <div class="nav-links">
     <a href="index.html" class="current">Companionship</a>
@@ -161,20 +162,24 @@
     <a href="grief-support.html">Grief support</a>
     <a href="meditation-coaching.html">Meditation</a>
     <div class="nav-dd">
-      <a href="resources.html" class="dd-trigger">Resources ▾</a>
-      <div class="nav-dd-menu"><div class="nav-dd-inner">
+      <button type="button" class="dd-trigger" aria-expanded="false" aria-controls="ddResources">
+        Resources <svg class="dd-caret" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 2 6 7l5-5"/></svg>
+      </button>
+      <div class="nav-dd-menu" id="ddResources">
+        <div class="nav-dd-inner">
         <a href="how-to-help-lonely-parent.html">How to help a lonely parent</a>
-        <a href="signs-of-loneliness-elderly-parents.html">Signs of loneliness</a>
+        <a href="signs-of-loneliness-elderly-parents.html">Signs your parent is lonely</a>
         <a href="what-to-talk-about-with-elderly-parent.html">What to talk about</a>
         <a href="activities-for-seniors-who-live-alone.html">Activities for seniors alone</a>
         <a href="senior-loneliness.html">Senior loneliness (research)</a>
-        <a href="resources.html">All resources →</a>
-      </div></div>
+          <a href="resources.html" class="dd-all">All resources →</a>
+        </div>
+      </div>
     </div>
     <a href="#book" class="nav-cta">Book free session</a>
   </div>
-  <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
@@ -182,7 +187,17 @@
   <a href="reading-sessions.html">Reading sessions</a>
   <a href="grief-support.html">Grief support</a>
   <a href="meditation-coaching.html">Meditation</a>
-  <a href="resources.html">Resources</a>
+  <button type="button" class="mobile-sub-toggle" aria-expanded="false" aria-controls="mobileResources">
+    Resources <svg class="dd-caret" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 2 6 7l5-5"/></svg>
+  </button>
+  <div id="mobileResources" class="mobile-sub">
+    <a href="how-to-help-lonely-parent.html">How to help a lonely parent</a>
+    <a href="signs-of-loneliness-elderly-parents.html">Signs your parent is lonely</a>
+    <a href="what-to-talk-about-with-elderly-parent.html">What to talk about</a>
+    <a href="activities-for-seniors-who-live-alone.html">Activities for seniors alone</a>
+    <a href="senior-loneliness.html">Senior loneliness (research)</a>
+    <a href="resources.html">All resources →</a>
+  </div>
   <a href="#book" class="nav-cta">Book free session</a>
 </div>
 </div>
@@ -190,10 +205,10 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-eyebrow">For families of lonely parents</div>
-    <h1>Your mom deserves someone to talk to. Every week.</h1>
+    <div class="hero-eyebrow">A real person — not an AI</div>
+    <h1>Someone to talk to. Every week.</h1>
     <p class="hero-lede">
-      A Chapter Together pairs your parent with a warm, screened companion for a one-on-one video visit — real conversation, real presence, and shared reading if they'd like. So the days feel less long, and you can breathe a little easier.
+      I'm Harlan. Once a week we meet by video and simply talk — about your week, your family, the garden, the news, or nothing in particular. We can read a book together if you'd like that. There's no agenda and nothing to download. Just someone who's glad to see you.
     </p>
     <div class="hero-actions">
       <a href="#book" class="btn btn-primary">Book a free first session</a>
@@ -246,18 +261,18 @@
     <div class="grid grid-4">
       <div class="feature">
         <div class="feature-num">01</div>
-        <h3>Tell us about them</h3>
-        <p>A short form: their name, what they enjoy, how they prefer to connect. We use it to match them with the right companion.</p>
+        <h3>Tell us about you</h3>
+        <p>A short form: your name, what you enjoy, how you'd prefer to connect. It takes about five minutes.</p>
       </div>
       <div class="feature">
         <div class="feature-num">02</div>
         <h3>Meet a companion</h3>
-        <p>We introduce your parent to a warm, screened companion. The first visit is free — no card, no commitment.</p>
+        <p>We meet by video and simply say hello. The first visit is free — no card, no commitment.</p>
       </div>
       <div class="feature">
         <div class="feature-num">03</div>
         <h3>Meet weekly</h3>
-        <p>Same companion, same day, same time. They talk, they read together if wanted, they build a real relationship over months.</p>
+        <p>Same day, same time, every week. We talk, we read together if you'd like, and it grows into something real over the months.</p>
       </div>
       <div class="feature">
         <div class="feature-num">04</div>
@@ -279,17 +294,17 @@
     <div class="grid grid-2">
       <div class="card">
         <h3>Reading sessions</h3>
-        <p>Our signature service. A companion reads aloud from a book of your parent's choosing, with pauses for conversation and reflection. Ideal for readers, or for anyone who wants a gentle way into good conversation.</p>
+        <p>Our signature service. A book of your choosing, read aloud, with pauses for conversation and reflection. Ideal if you love books — or if you'd just like a gentle way into good conversation.</p>
         <a href="reading-sessions.html" class="card-link">Learn about reading sessions</a>
       </div>
       <div class="card">
         <h3>Companionship visits</h3>
-        <p>A weekly video visit that's simply conversation. No reading required. Great for parents who want to talk, share stories, and feel connected to someone who genuinely enjoys their company.</p>
+        <p>A weekly video visit that's simply conversation. No reading required. Good if you'd like to talk, share stories, and feel connected to someone who genuinely enjoys your company.</p>
         <a href="#book" class="card-link">Book a companionship visit</a>
       </div>
       <div class="card">
         <h3>Grief support</h3>
-        <p>For parents who've lost a spouse or dear friend. A gentle, patient companion who's trained to sit with grief — not fix it — and offer the kind of steady presence that helps in the hardest year.</p>
+        <p>For anyone who's lost a spouse or a dear friend. A gentle, patient companion who's trained to sit with grief — not fix it — and offer the kind of steady presence that helps in the hardest year.</p>
         <a href="grief-support.html" class="card-link">Learn about grief support</a>
       </div>
       <div class="card">
@@ -325,26 +340,18 @@
   </div>
 </section>
 
-<!-- ============ ABOUT ME ============ -->
-<section id="about" class="bg-warm">
+<!-- ============ FOUNDER ============ -->
+<section class="bg-warm">
   <div class="wrap-narrow">
-    <div class="about-block">
-      <div class="about-photo"><img src="harlan.jpg" alt="Harlan Moore, founder of A Chapter Together" /></div>
-      <div class="about-text">
-        <span class="chapter-mark">About me</span>
-        <h2>Hi, I'm Harlan.</h2>
-        <p style="font-size: 1.15rem; line-height: 1.7;">
-          I started A Chapter Together after losing my brother and my father on the same day. In the months that followed, I saw how much a steady, caring presence can mean — and how hard it is to find one when the people around you have moved on or don't know what to say.
-        </p>
-        <p style="font-size: 1.15rem; line-height: 1.7;">
-          I've spent fifteen years practicing Vipassana meditation, sitting with teachers in India and keeping up a daily practice through years of work and travel in remote places. That experience shaped everything about how we approach companionship here: patience, real listening, and an understanding that loneliness responds to two things — genuine connection with another person, and a steadier relationship with your own mind.
-        </p>
-        <p style="font-size: 1.15rem; line-height: 1.7;">
-          Every companion we bring on is someone I would trust with my own mother. That's the standard. If it doesn't feel right for your family in the first session, you don't owe us a thing.
-        </p>
-        <p style="font-weight: 600; color: var(--ink);">— Harlan Moore, founder</p>
-      </div>
-    </div>
+    <span class="chapter-mark">A note from Harlan</span>
+    <h2>Why this exists</h2>
+    <p style="font-size: 1.15rem; line-height: 1.7;">
+      I built A Chapter Together because loneliness responds to two things: real connection with another person, and a steadier relationship with your own mind. I've spent fifteen years practicing meditation and a lifetime watching people I love get quieter as the world got smaller around them. This service is my attempt to change that — one weekly hour at a time.
+    </p>
+    <p style="font-size: 1.15rem; line-height: 1.7;">
+      Every companion we bring on is someone I would trust with my own mother. That's the standard. If it doesn't feel right for your family in the first session, you don't owe us a thing.
+    </p>
+    <p style="font-weight: 600; color: var(--ink);">— Harlan Moore, founder</p>
   </div>
 </section>
 
@@ -355,7 +362,7 @@
       <span class="chapter-mark">Simple pricing</span>
       <h2>Start free. Continue only if it feels right.</h2>
       <p style="max-width: 52ch; margin-bottom: 32px;">
-        Your first 30-minute session is on us. If your parent enjoys it, sessions start at $60 per weekly visit, with lower rates on 4-session and 12-session plans.
+        Your first 30-minute session is on us. If you enjoy it, sessions start at $60 per weekly visit, with lower rates on 4-session and 12-session plans.
       </p>
       <a href="#book" class="btn btn-primary">Book the free first session</a>
     </div>
@@ -382,11 +389,11 @@
     </details>
     <details class="faq-item">
       <summary>What if my parent has memory issues?</summary>
-      <p>We work with many families whose parents have early-stage memory challenges. Our companions are trained in gentle, reassuring conversation and never rely on a member's ability to remember prior sessions. If more clinical care is needed, we'll say so honestly.</p>
+      <p>Yes. We work with many people who have early-stage memory challenges. Our companions are trained in gentle, reassuring conversation and never rely on anyone's ability to remember prior sessions. If more clinical care is needed, we'll say so honestly.</p>
     </details>
     <details class="faq-item">
-      <summary>Can you send updates so I know how they're doing?</summary>
-      <p>Yes. After each session you'll receive a short, warm note from the companion. It's not a clinical report — it's more like the kind of update a friend might send. Enough to know how your parent was, and often enough to give you something real to bring up next time you call.</p>
+      <summary>If I'm booking for someone else, can you send me updates?</summary>
+      <p>Yes — with their permission. After each session you'll receive a short, warm note. It's not a clinical report, more the kind of update a friend might send. Enough to know how they were, and often enough to give you something real to bring up next time you call.</p>
     </details>
     <details class="faq-item">
       <summary>Where in the world do you work?</summary>
@@ -401,9 +408,19 @@
     <div class="section-head center" style="margin-inline: auto;">
       <span class="chapter-mark">Book the free first session</span>
       <h2>Start with one visit. See how it goes.</h2>
-      <p>Fill this in and we'll be back to you within one business day to schedule your parent's first session.</p>
+      <p>Fill this in and I'll be back to you within one business day to arrange your first visit.</p>
     </div>
-    <form class="form-card" action="https://formspree.io/f/mojbodyp" method="POST">
+    <!-- NOTE: replace YOUR_FORM_ID below with your real Formspree form ID. -->
+    <form class="form-card" action="https://formspree.io/f/mojbodyp" method="POST" id="intakeForm">
+
+      <div class="form-field">
+        <label for="booking-for">Who are these visits for?</label>
+        <select id="booking-for" name="booking-for">
+          <option value="Myself" selected>Myself</option>
+          <option value="Someone else">Someone else</option>
+        </select>
+      </div>
+
       <div class="form-field">
         <label for="your-name">Your name</label>
         <input type="text" id="your-name" name="your-name" required />
@@ -412,16 +429,25 @@
         <label for="your-email">Your email</label>
         <input type="email" id="your-email" name="_replyto" required />
       </div>
-      <div class="form-field">
-        <label for="parent-name">Your parent's first name</label>
-        <input type="text" id="parent-name" name="parent-name" required />
+
+      <!-- Shown when booking for yourself -->
+      <div class="form-field" data-branch="self">
+        <label for="your-location">Where do you live?</label>
+        <input type="text" id="your-location" name="your-location" placeholder="City, State/Country" />
       </div>
-      <div class="form-field">
-        <label for="parent-location">Where does your parent live?</label>
-        <input type="text" id="parent-location" name="parent-location" placeholder="City, State/Country" required />
+
+      <!-- Shown when booking for someone else -->
+      <div class="form-field" data-branch="other" hidden>
+        <label for="their-name">Their first name</label>
+        <input type="text" id="their-name" name="their-name" />
       </div>
+      <div class="form-field" data-branch="other" hidden>
+        <label for="their-location">Where do they live?</label>
+        <input type="text" id="their-location" name="their-location" placeholder="City, State/Country" />
+      </div>
+
       <div class="form-field">
-        <label for="service">What kind of visit would suit them best?</label>
+        <label for="service">What kind of visit sounds right?</label>
         <select id="service" name="service">
           <option>I'm not sure — help me choose</option>
           <option>Reading sessions</option>
@@ -430,15 +456,44 @@
           <option>Meditation</option>
         </select>
       </div>
-      <div class="form-field">
-        <label for="about">Tell us a little about them (optional)</label>
-        <textarea id="about" name="about" placeholder="What do they enjoy? What's been hard lately? Anything you'd like us to know."></textarea>
+
+      <div class="form-field" data-branch="self">
+        <label for="about-self">Tell me a little about yourself (optional)</label>
+        <textarea id="about-self" name="about-self" placeholder="What do you enjoy? What's been on your mind lately? Anything you'd like me to know."></textarea>
       </div>
+      <div class="form-field" data-branch="other" hidden>
+        <label for="about-other">Tell me a little about them (optional)</label>
+        <textarea id="about-other" name="about-other" placeholder="What do they enjoy? What's been hard lately? Anything you'd like me to know."></textarea>
+      </div>
+
       <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send &amp; get scheduled</button>
       <p style="font-size: 0.85rem; color: var(--muted); margin-top: 16px; margin-bottom: 0; text-align: center;">
-        We reply within one business day. Your details stay private.
+        I reply within one business day. Your details stay private.
       </p>
     </form>
+
+    <script>
+      // Branching intake: show only the relevant fields, and disable the hidden
+      // ones so the browser never blocks submit on an invisible field and
+      // Formspree never receives empty noise.
+      (function () {
+        var form = document.getElementById('intakeForm');
+        if (!form) return;
+        var select = document.getElementById('booking-for');
+        function sync() {
+          var mode = select.value === 'Someone else' ? 'other' : 'self';
+          form.querySelectorAll('[data-branch]').forEach(function (group) {
+            var on = group.getAttribute('data-branch') === mode;
+            group.hidden = !on;
+            group.querySelectorAll('input, textarea, select').forEach(function (el) {
+              el.disabled = !on;
+            });
+          });
+        }
+        select.addEventListener('change', sync);
+        sync();
+      })();
+    </script>
   </div>
 </section>
 
@@ -476,7 +531,7 @@
   <div class="wrap">
     <div class="footer-brand">
       <a href="index.html" class="logo">A Chapter Together</a>
-      <p>Weekly one-on-one video visits with warm, screened companions — for parents who deserve someone to talk to.</p>
+      <p>Weekly one-on-one video visits with a real person — for anyone who'd like someone to talk to.</p>
     </div>
     <div>
       <h4>Services</h4>
@@ -508,5 +563,6 @@
   </div>
 </footer>
 
+<script src="nav.js" defer></script>
 </body>
 </html>
